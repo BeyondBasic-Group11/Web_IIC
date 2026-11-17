@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LexiVibe — Expressive English Beyond Basics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Top Navigation (Desktop & Mobile Header) -->
+  <header class="top-nav">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" data-nav="home">
+        <span class="brand-logo" aria-hidden="true">✦</span>
+        <span class="brand-text">Lexi<span class="brand-accent">Vibe</span></span>
+      </a>
+
+      <nav class="desktop-links" aria-label="Main Navigation">
+        <button class="nav-btn active" data-nav="home">Home</button>
+        <button class="nav-btn" data-nav="words">1. Rare Words</button>
+        <button class="nav-btn" data-nav="stories">2. Personal Stories</button>
+        <button class="nav-btn" data-nav="quiz">3. Interactive Quiz</button>
+      </nav>
+
+      <div class="nav-actions">
+        <div class="mastery-pill" title="Words Mastered">
+          <span class="pill-dot"></span>
+          <span id="navMasteryCount">0/10</span>
+        </div>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle Dark Mode" title="Switch Light / Dark Theme">
+          <span id="themeIcon">🌙</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main class="container main-content">
+    <!-- ==================== PAGE 0: HOME / INTRO ==================== -->
+    <section id="page-home" class="page active" aria-labelledby="hero-title">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow-badge">Interactive English Learning Platform</span>
+          <h1 id="hero-title" class="hero-title">
+            Speak Beyond <span class="gradient-text">Basic English</span>
+          </h1>
+          <p class="hero-subtitle">
+            Tired of repeating <em>"very happy"</em>, <em>"really sad"</em>, or <em>"good smell"</em>?
+            LexiVibe helps you discover rare, expressive English words, hear how native speakers
+            pronounce them, read them inside real personal stories, and test your memory with
+            interactive definition-matching quizzes.
+          </p>
+
+          <div class="hero-cta-group">
+            <button class="btn btn-primary" data-nav="words">
+              Explore Rare Words →
+            </button>
+            <button class="btn btn-secondary" data-nav="quiz">
+              Jump to Quiz
+            </button>
+          </div>
+
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-num" id="homeMasteredStat">0 / 10</span>
+              <span class="stat-label">Words Mastered</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num">3</span>
+              <span class="stat-label">Personal Stories</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-num" id="homeBestQuizStat">—</span>
+              <span class="stat-label">Best Quiz Score</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Word of the Day Featured Card -->
+        <aside class="wotd-card" aria-label="Featured Expressive Word">
+          <div class="wotd-header">
+            <span class="wotd-tag">✨ Featured Expressive Word</span>
+            <button class="audio-chip" data-speak="Petrichor" title="Pronounce Petrichor">
+              🔊 Listen
+            </button>
+          </div>
+          <h2 class="wotd-word">Petrichor</h2>
+          <p class="wotd-ipa">/ˈpet.rɪ.kɔːr/ • <em>noun</em></p>
+          <p class="wotd-def">
+            The pleasant, earthy scent produced when rain falls on dry soil after a long warm spell.
+          </p>
+          <div class="wotd-compare">
+            <span class="compare-old">Instead of: "The nice smell after rain"</span>
+            <span class="compare-new">Use: "The air was filled with fresh <strong>petrichor</strong>."</span>
+          </div>
+        </aside>
+      </div>
+
+      <!-- 3 Learning Modules Overview -->
+      <div class="section-heading">
+        <h2>How LexiVibe Works (3 Interactive Pages)</h2>
+        <p>Follow the three-step learning flow designed to turn passive vocabulary into active expression.</p>
+      </div>
+
+      <div class="modules-grid">
+        <article class="module-card" data-nav="words">
+          <div class="module-step">Page 01</div>
+          <div class="module-icon">🎧</div>
+          <h3>Rare Words &amp; Pronunciation</h3>
+          <p>
+            Browse 10 evocative English words with IPA phonetics, US/UK voice pronunciation,
+            speed controls, and everyday alternatives.
+          </p>
+          <span class="module-link">Open Vocabulary Lab →</span>
+        </article>
+
+        <article class="module-card" data-nav="stories">
+          <div class="module-step">Page 02</div>
+          <div class="module-icon">📖</div>
+          <h3>Personal Experience Stories</h3>
+          <p>
+            Read three relatable short stories where rare words come alive in context. Tap any
+            highlighted word for instant definitions &amp; audio.
+          </p>
+          <span class="module-link">Read Personal Stories →</span>
+        </article>
+
+        <article class="module-card" data-nav="quiz">
+          <div class="module-step">Page 03</div>
+          <div class="module-icon">🎯</div>
+          <h3>Definition Matching Quiz</h3>
+          <p>
+            Match each English definition to the right expressive word among five choices (a–e)
+            with instant explanations and score tracking.
+          </p>
+          <span class="module-link">Start Challenge →</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== PAGE 1: RARE VOCABULARY ==================== -->
+    <section id="page-words" class="page" aria-labelledby="words-title">
+      <div class="page-header">
+        <div>
+          <span class="eyebrow-badge">Page 1 of 3 • Vocabulary Lab</span>
+          <h1 id="words-title">Rare &amp; Expressive Words</h1>
+          <p class="page-desc">
+            Listen to native pronunciation, compare basic vs. expressive phrasing, and mark words as mastered.
+          </p>
+        </div>
+
+        <!-- Speech Controls -->
+        <div class="speech-controls" role="group" aria-label="Pronunciation Settings">
+          <div class="control-group">
+            <span class="control-label">Accent:</span>
+            <button class="seg-btn active" data-accent="en-US">🇺🇸 US</button>
+            <button class="seg-btn" data-accent="en-GB">🇬🇧 UK</button>
+          </div>
+          <div class="control-group">
+            <span class="control-label">Speed:</span>
+            <button class="seg-btn active" data-rate="1">1.0x</button>
+            <button class="seg-btn" data-rate="0.72">0.7x</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Search & Category Filter -->
+      <div class="filter-bar">
+        <div class="search-wrap">
+          <span class="search-icon" aria-hidden="true">🔍</span>
+          <input
+            type="search"
+            id="wordSearchInput"
+            placeholder="Search word, meaning, or basic equivalent..."
+            aria-label="Search vocabulary"
+          />
+        </div>
+        <div class="category-pills" id="categoryPills">
+          <button class="cat-pill active" data-cat="All">All (10)</button>
+          <button class="cat-pill" data-cat="Emotion & Mind">Emotion &amp; Mind</button>
+          <button class="cat-pill" data-cat="Nature & Atmosphere">Nature &amp; Atmosphere</button>
+          <button class="cat-pill" data-cat="Character & Style">Character &amp; Style</button>
+        </div>
+      </div>
+
+      <!-- Vocabulary Cards Grid -->
+      <div id="vocabGrid" class="vocab-grid"></div>
+    </section>
+
+    <!-- ==================== PAGE 2: PERSONAL STORIES ==================== -->
+    <section id="page-stories" class="page" aria-labelledby="stories-title">
+      <div class="page-header">
+        <div>
+          <span class="eyebrow-badge">Page 2 of 3 • Contextual Reading</span>
+          <h1 id="stories-title">Personal Experience Stories</h1>
+          <p class="page-desc">
+            Tap any <span class="inline-highlight-demo">highlighted word</span> inside the story to inspect its definition and hear how it sounds.
+          </p>
+        </div>
+      </div>
+
+      <!-- Story Selector Tabs -->
+      <div class="story-tabs" id="storyTabs" role="tablist"></div>
+
+      <!-- Active Story Reader Card -->
+      <article class="story-reader-card">
+        <div class="story-toolbar">
+          <div class="story-meta">
+            <span id="storyTag" class="story-tag">Travel &amp; Reflection</span>
+            <span id="storyReadTime" class="story-read-time">• 2 min read</span>
+          </div>
+          <div class="story-actions">
+            <button id="fontDecreaseBtn" class="tool-btn" title="Decrease Text Size">A-</button>
+            <button id="fontIncreaseBtn" class="tool-btn" title="Increase Text Size">A+</button>
+            <button id="readStoryAloudBtn" class="btn btn-primary btn-sm">
+              🔊 Read Story Aloud
+            </button>
+          </div>
+        </div>
+
+        <h2 id="storyTitle" class="story-title"></h2>
+        <p id="storyAuthor" class="story-author"></p>
+
+        <div id="storyBody" class="story-body"></div>
+
+        <!-- Reflection Practice Box -->
+        <div class="reflection-box">
+          <h3>✍️ Quick Reflection Prompt</h3>
+          <p id="storyPrompt" class="reflection-question"></p>
+          <textarea
+            id="reflectionInput"
+            rows="3"
+            placeholder="Write a short sentence using one of the highlighted words above..."
+          ></textarea>
+          <div class="reflection-footer">
+            <span id="reflectionSavedMsg" class="saved-msg"></span>
+            <button id="saveReflectionBtn" class="btn btn-secondary btn-sm">Save Note</button>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!-- ==================== PAGE 3: INTERACTIVE QUIZ ==================== -->
+    <section id="page-quiz" class="page" aria-labelledby="quiz-title">
+      <div class="page-header">
+        <div>
+          <span class="eyebrow-badge">Page 3 of 3 • Active Recall</span>
+          <h1 id="quiz-title">Match the Definition Quiz</h1>
+          <p class="page-desc">
+            Read each English definition carefully and select the matching rare word from options <strong>a</strong> to <strong>e</strong>.
+          </p>
+        </div>
+      </div>
+
+      <div id="quizContainer" class="quiz-card">
+        <!-- Quiz Progress Header -->
+        <div class="quiz-top">
+          <span id="quizCounter" class="quiz-counter">Question 1 of 10</span>
+          <span id="quizScoreBadge" class="quiz-score-pill">Score: 0</span>
+        </div>
+        <div class="progress-track" aria-hidden="true">
+          <div id="quizProgressBar" class="progress-fill"></div>
+        </div>
+
+        <!-- Question Body -->
+        <div id="quizQuestionArea">
+          <p class="quiz-instruction">Which word matches this definition?</p>
+          <blockquote id="quizDefinition" class="quiz-definition"></blockquote>
+
+          <div id="quizOptions" class="quiz-options" role="radiogroup"></div>
+
+          <div id="quizFeedback" class="quiz-feedback hidden"></div>
+
+          <div class="quiz-footer">
+            <button id="nextQuestionBtn" class="btn btn-primary hidden">
+              Next Question →
+            </button>
+          </div>
+        </div>
+
+        <!-- Final Results View -->
+        <div id="quizResultArea" class="quiz-results hidden">
+          <div id="resultBadge" class="result-emoji">🏆</div>
+          <h2 id="resultHeading">Quiz Completed!</h2>
+          <p id="resultSummary" class="result-summary"></p>
+          <div id="resultReviewList" class="result-review"></div>
+          <div class="result-actions">
+            <button id="retakeQuizBtn" class="btn btn-primary">↻ Retake Quiz</button>
+            <button class="btn btn-secondary" data-nav="words">Review Vocabulary</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Mobile Bottom Navigation Bar (<768px) -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <button class="mob-nav-btn active" data-nav="home">
+      <span class="mob-icon">🏠</span>
+      <span class="mob-label">Home</span>
+    </button>
+    <button class="mob-nav-btn" data-nav="words">
+      <span class="mob-icon">🎧</span>
+      <span class="mob-label">Words</span>
+    </button>
+    <button class="mob-nav-btn" data-nav="stories">
+      <span class="mob-icon">📖</span>
+      <span class="mob-label">Stories</span>
+    </button>
+    <button class="mob-nav-btn" data-nav="quiz">
+      <span class="mob-icon">🎯</span>
+      <span class="mob-label">Quiz</span>
+    </button>
+  </nav>
+
+  <!-- Interactive Word Definition Modal / Mobile Bottom Sheet -->
+  <div id="wordModalBackdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalWordTitle">
+    <div class="word-modal">
+      <div class="modal-drag-handle" aria-hidden="true"></div>
+      <div class="modal-top">
+        <div>
+          <span id="modalWordCat" class="modal-cat"></span>
+          <h3 id="modalWordTitle" class="modal-word"></h3>
+          <p id="modalWordIpa" class="modal-ipa"></p>
+        </div>
+        <button id="closeModalBtn" class="icon-btn" aria-label="Close definition">✕</button>
+      </div>
+      <p id="modalWordDef" class="modal-def"></p>
+      <div class="modal-example-box">
+        <span class="modal-ex-label">Example in context:</span>
+        <p id="modalWordEx" class="modal-ex"></p>
+      </div>
+      <div class="modal-actions">
+        <button id="modalSpeakBtn" class="btn btn-primary btn-sm">🔊 Pronounce Word</button>
+        <button id="modalMasterBtn" class="btn btn-secondary btn-sm">✓ Mark Mastered</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
