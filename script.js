@@ -3748,7 +3748,8 @@ function setupProfile() {
             .from("avatars")
             .upload(path, blob, { upsert: true, contentType: "image/jpeg" });
           if (upErr) {
-            showToast("PHOTO UPLOAD FAILED");
+            showToast(`UPLOAD FAILED: ${String(upErr.message || upErr).slice(0, 60).toUpperCase()}`);
+            console.error("Avatar upload error:", upErr);
             return;
           }
           const { data: pub } = sb.storage.from("avatars").getPublicUrl(path);
