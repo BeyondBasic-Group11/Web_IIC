@@ -2319,3 +2319,17 @@ body.logged-out .page:not(#page-login) { display: none !important; }
   gap: 10px;
 }
 .google-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+/* Respect the hidden attribute even when a class sets display */
+[hidden] { display: none !important; }
+
+/* Visually hidden file input: still opens the picker when a <label> points to it */
+.visually-hidden-file {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.pf-upload-btn { cursor: pointer; display: inline-flex; align-items: center; }

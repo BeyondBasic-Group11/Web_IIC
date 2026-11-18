@@ -3306,6 +3306,8 @@ function showToast(message) {
 // ==========================================================================
 const SUPABASE_URL = "https://pbvlcjlgxbxpxmzzcigf.supabase.co";
 const SUPABASE_KEY = "sb_publishable_uV4Wc5Pe2IJdGvlxJZCwBg_4iIsLspV";
+// Set to true only after the Google provider is enabled in Supabase (Authentication > Providers > Google)
+const GOOGLE_LOGIN_ENABLED = false;
 const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
 let authUser = null;     // Supabase auth user (id, email)
@@ -3648,7 +3650,7 @@ function renderProfile() {
         <div class="pf-name">${escAttr(user.name)}</div>
         <div class="pf-meta">${escAttr(user.email)}</div>
         <div class="pf-actions">
-          <button type="button" class="brutal-btn-sm bg-yellow" data-action="upload">UPLOAD PHOTO</button>
+          <label class="brutal-btn-sm bg-yellow pf-upload-btn" for="avatarInput">UPLOAD PHOTO</label>
           <button type="button" class="brutal-btn-sm" data-action="logout">LOG OUT</button>
         </div>
         <form id="nameForm" class="pf-name-form">
@@ -3698,6 +3700,10 @@ function renderProfile() {
 
 function setupProfile() {
   document.getElementById("loginForm").addEventListener("submit", handleLoginSubmit);
+  if (!GOOGLE_LOGIN_ENABLED) {
+    document.getElementById("googleLoginBtn").style.display = "none";
+    document.getElementById("loginDivider").style.display = "none";
+  }
   document.getElementById("googleLoginBtn").addEventListener("click", async () => {
     const err = document.getElementById("loginError");
     if (!sb) {
@@ -3768,7 +3774,6 @@ function setupProfile() {
     const btn = e.target.closest("[data-action]");
     if (!btn) return;
     if (btn.dataset.action === "logout") signOutAndReload();
-    if (btn.dataset.action === "upload") document.getElementById("avatarInput").click();
   });
   root.addEventListener("submit", async (e) => {
     if (e.target.id !== "nameForm") return;
