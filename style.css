@@ -2333,3 +2333,184 @@ body.logged-out .page:not(#page-login) { display: none !important; }
   pointer-events: none;
 }
 .pf-upload-btn { cursor: pointer; display: inline-flex; align-items: center; }
+
+/* ==========================================================================
+   CALM LAYER: less visual noise, same neo-brutalist character
+   Only visual properties are changed here. Layout and behavior stay the same.
+   ========================================================================== */
+
+/* Softer background grid (light and dark) */
+:root { --dot-color: rgba(0, 0, 0, 0.045); }
+:root[data-theme="dark"] { --dot-color: rgba(255, 255, 255, 0.035); }
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --dot-color: rgba(255, 255, 255, 0.035); }
+}
+
+/* Easier reading: calmer line height and a less harsh text color in dark mode */
+body { line-height: 1.6; }
+:root[data-theme="dark"] {
+  --ink: #e8e8e8;
+  --ink-muted: #a6a6a6;
+  --surface: #171717;
+  --surface-alt: #1f1f1f;
+}
+
+/* One border weight and one shadow size for cards and windows */
+.os-window,
+.vocab-card,
+.unit-mini-card,
+.subtopic-card,
+.dialogue-box,
+.reflection-panel,
+.pf-panel,
+.pf-stat,
+.pf-header,
+.read-first {
+  border-width: 2px;
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+/* Remove decorative window dots, they add noise without meaning */
+.os-dots { display: none !important; }
+
+/* Lighter, consistent button and pill weight */
+.brutal-btn,
+.brutal-btn-sm { font-weight: 700; box-shadow: 3px 3px 0 var(--shadow); }
+.tag-pill { font-weight: 700; letter-spacing: 0.03em; }
+
+/* More breathing room between sections */
+.page-top-banner { margin-bottom: 24px; }
+.exam-group { margin-bottom: 28px; }
+.unit-mini-card { padding: 16px; }
+.pf-panel { margin-bottom: 20px; }
+
+/* Headlines: strong, but not shouting */
+.page-headline {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.12;
+}
+
+/* Mobile: slightly smaller headlines and tighter, even gutters */
+@media (max-width: 599px) {
+  .page-headline { font-size: 1.7rem; }
+  .exam-group { margin-bottom: 22px; }
+  .pf-panel { padding: 14px; }
+  .pf-stat-value { font-size: 1.3rem; }
+}
+
+/* ==========================================================================
+   LOGIN PAGE: two columns on laptop, one column on phone
+   ========================================================================== */
+.auth-layout {
+  display: grid;
+  gap: 28px;
+  align-items: center;
+  padding: 8px 0 28px;
+  min-height: 70vh;
+}
+
+@media (min-width: 900px) {
+  .auth-layout { grid-template-columns: 1.1fr 0.9fr; gap: 56px; }
+}
+
+.auth-title {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin: 16px 0 14px;
+}
+
+.auth-lead {
+  color: var(--ink-muted);
+  font-size: 1.02rem;
+  max-width: 44ch;
+}
+
+.auth-points {
+  list-style: none;
+  padding: 0;
+  margin: 24px 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.auth-dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  margin-right: 10px;
+  border: 2px solid var(--border);
+  border-radius: 50%;
+  vertical-align: middle;
+}
+
+.auth-card { padding: 0; overflow: hidden; width: 100%; max-width: 480px; justify-self: center; }
+
+.auth-card-head {
+  padding: 10px 18px;
+  background: var(--pop-yellow);
+  color: #141414;
+  border-bottom: 2px solid var(--border);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+}
+
+.auth-card-body { padding: 22px; }
+
+.auth-card-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  margin: 0 0 4px;
+}
+
+.auth-submit { width: 100%; margin-top: 4px; }
+
+@media (max-width: 599px) {
+  .auth-layout { min-height: 0; padding-top: 4px; gap: 22px; }
+  .auth-card-body { padding: 18px; }
+  .auth-points { margin-top: 18px; }
+}
+
+/* ==========================================================================
+   HOME HERO: balanced columns, clear hierarchy on phone and laptop
+   ========================================================================== */
+#page-home .hero-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+  align-items: stretch;
+}
+
+@media (min-width: 900px) {
+  #page-home .hero-layout { grid-template-columns: 1.15fr 1fr; gap: 24px; }
+}
+
+#page-home .poster-block { padding: 26px; }
+
+@media (min-width: 900px) {
+  #page-home .poster-block { padding: 36px; }
+}
+
+#page-home .wotd-window { min-height: 0; }
+
+#page-home .hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 599px) {
+  #page-home .hero-actions .brutal-btn { flex: 1 1 100%; }
+  #page-home .hero-actions .brutal-btn:not(:first-child) { flex: 1 1 calc(50% - 5px); }
+}
+
+/* Code entry step for email sign-in */
+.otp-step { margin-top: 0; }
+.otp-back { align-self: flex-start; }
+#otpCode { letter-spacing: 0.3em; text-align: center; font-size: 1.2rem; font-weight: 800; }

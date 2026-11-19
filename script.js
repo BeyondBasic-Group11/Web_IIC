@@ -1191,6 +1191,846 @@ const VOCAB_DATA = [
     "basicAlt": "Clear and easy to understand",
     "origin": "Latin 'lucidus' (bright, clear).",
     "example": "Her lucid explanation made the topic easy to follow."
+  },
+  {
+    "id": "apprehensive",
+    "word": "Apprehensive",
+    "ipa": "/ˌæp.rɪˈhen.sɪv/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Anxious or worried about something that may happen.",
+    "basicAlt": "Worried about the future",
+    "origin": "Latin 'apprehendere' (to seize, to grasp).",
+    "example": "She felt apprehensive before her first presentation."
+  },
+  {
+    "id": "nonchalant",
+    "word": "Nonchalant",
+    "ipa": "/ˈnɒn.ʃə.lɒnt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Calm and relaxed, showing no worry or interest.",
+    "basicAlt": "Relaxed and unbothered",
+    "origin": "French 'nonchalant' (not concerned).",
+    "example": "He stayed nonchalant even when the deadline moved."
+  },
+  {
+    "id": "exhilarated",
+    "word": "Exhilarated",
+    "ipa": "/ɪɡˈzɪl.ə.reɪ.tɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Feeling very excited and full of energy.",
+    "basicAlt": "Very excited",
+    "origin": "Latin 'exhilarare' (to cheer up).",
+    "example": "We felt exhilarated after the final result was announced."
+  },
+  {
+    "id": "resentful",
+    "word": "Resentful",
+    "ipa": "/rɪˈzent.fəl/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Feeling bitter about something you consider unfair.",
+    "basicAlt": "Bitter about something unfair",
+    "origin": "Old French 'ressentir' (to feel strongly).",
+    "example": "She was resentful about being left out of the project."
+  },
+  {
+    "id": "apathetic",
+    "word": "Apathetic",
+    "ipa": "/ˌæp.əˈθet.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Showing little or no interest or emotion.",
+    "basicAlt": "Not interested at all",
+    "origin": "Greek 'apatheia' (without feeling).",
+    "example": "Many students were apathetic about the optional workshop."
+  },
+  {
+    "id": "jubilant",
+    "word": "Jubilant",
+    "ipa": "/ˈdʒuː.bɪ.lənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Feeling great joy, especially after a success.",
+    "basicAlt": "Very happy after winning",
+    "origin": "Latin 'jubilare' (to shout for joy).",
+    "example": "The team was jubilant after winning the competition."
+  },
+  {
+    "id": "reluctant",
+    "word": "Reluctant",
+    "ipa": "/rɪˈlʌk.tənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Unwilling to do something.",
+    "basicAlt": "Not really willing",
+    "origin": "Latin 'reluctari' (to struggle against).",
+    "example": "He was reluctant to share his draft before it was finished."
+  },
+  {
+    "id": "wary",
+    "word": "Wary",
+    "ipa": "/ˈweə.ri/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Careful because you expect problems or danger.",
+    "basicAlt": "Careful and suspicious",
+    "origin": "Old English 'wær' (aware, cautious).",
+    "example": "I'm wary of offers that sound too good to be true."
+  },
+  {
+    "id": "bewildered",
+    "word": "Bewildered",
+    "ipa": "/bɪˈwɪl.dəd/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Confused and unable to understand something.",
+    "basicAlt": "Totally confused",
+    "origin": "Based on 'wilder' (to lead astray).",
+    "example": "The bewildered tourist checked the map again."
+  },
+  {
+    "id": "indignant",
+    "word": "Indignant",
+    "ipa": "/ɪnˈdɪɡ.nənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Angry because something is unfair or wrong.",
+    "basicAlt": "Angry about something unfair",
+    "origin": "Latin 'indignari' (to regard as unworthy).",
+    "example": "The customer was indignant about the wrong charge."
+  },
+  {
+    "id": "euphoric",
+    "word": "Euphoric",
+    "ipa": "/juːˈfɒr.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Feeling intense happiness.",
+    "basicAlt": "Extremely happy",
+    "origin": "Greek 'euphoria' (well-bearing).",
+    "example": "The crowd was euphoric when the band returned."
+  },
+  {
+    "id": "sentimental",
+    "word": "Sentimental",
+    "ipa": "/ˌsen.tɪˈmen.təl/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Easily moved by feelings, often about memories.",
+    "basicAlt": "Emotional about memories",
+    "origin": "Latin 'sentire' (to feel).",
+    "example": "He kept a sentimental collection of old letters."
+  },
+  {
+    "id": "skeptical",
+    "word": "Skeptical",
+    "ipa": "/ˈskep.tɪ.kəl/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Doubtful about whether something is true.",
+    "basicAlt": "Doubtful",
+    "origin": "Greek 'skeptikos' (thoughtful, inquiring).",
+    "example": "I'm skeptical about the claim until I see the data."
+  },
+  {
+    "id": "trepidation",
+    "word": "Trepidation",
+    "ipa": "/ˌtrep.ɪˈdeɪ.ʃən/",
+    "pos": "NOUN",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "A feeling of fear or nervousness about what may happen.",
+    "basicAlt": "Nervousness",
+    "origin": "Latin 'trepidatio' (alarm, agitation).",
+    "example": "She walked onto the stage with trepidation."
+  },
+  {
+    "id": "ecstatic",
+    "word": "Ecstatic",
+    "ipa": "/ɪkˈstæt.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Extremely happy and excited.",
+    "basicAlt": "Super happy",
+    "origin": "Greek 'ekstatikos' (ecstasy).",
+    "example": "The fans were ecstatic when the band returned."
+  },
+  {
+    "id": "forlorn",
+    "word": "Forlorn",
+    "ipa": "/fəˈlɔːn/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Lonely and sad, especially when left behind.",
+    "basicAlt": "Lonely and sad",
+    "origin": "Old English 'forlosen' (lost, abandoned).",
+    "example": "The forlorn puppy waited by the gate."
+  },
+  {
+    "id": "pensive",
+    "word": "Pensive",
+    "ipa": "/ˈpen.sɪv/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Thinking quietly and deeply.",
+    "basicAlt": "Lost in thought",
+    "origin": "Old French 'pensif' (thinking).",
+    "example": "She grew pensive while looking at the old photos."
+  },
+  {
+    "id": "sheepish",
+    "word": "Sheepish",
+    "ipa": "/ˈʃiː.pɪʃ/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Embarrassed about a small mistake.",
+    "basicAlt": "Embarrassed",
+    "origin": "From 'sheep' (timid, meek).",
+    "example": "He gave a sheepish smile after tripping on stage."
+  },
+  {
+    "id": "irritated",
+    "word": "Irritated",
+    "ipa": "/ˈɪr.ɪ.teɪ.tɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Annoyed by something small or repeated.",
+    "basicAlt": "Annoyed",
+    "origin": "Latin 'irritare' (to provoke).",
+    "example": "She was irritated by the constant noise next door."
+  },
+  {
+    "id": "buoyant",
+    "word": "Buoyant",
+    "ipa": "/ˈbɔɪ.ənt/",
+    "pos": "ADJECTIVE",
+    "category": "Emotion & Mind",
+    "badgeColor": "bg-yellow",
+    "definition": "Cheerful and full of hope, or able to float.",
+    "basicAlt": "Cheerful and light",
+    "origin": "Old French 'buoier' (to float).",
+    "example": "The buoyant mood lifted everyone's spirits."
+  },
+  {
+    "id": "benevolent",
+    "word": "Benevolent",
+    "ipa": "/bəˈnev.ə.lənt/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Kind and wanting to help others.",
+    "basicAlt": "Very kind",
+    "origin": "Latin 'bene' (well) and 'volens' (wishing).",
+    "example": "The benevolent teacher stayed late to help us practice."
+  },
+  {
+    "id": "empathetic",
+    "word": "Empathetic",
+    "ipa": "/ˌem.pəˈθet.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Able to understand and share another person's feelings.",
+    "basicAlt": "Understanding others' feelings",
+    "origin": "Greek 'empatheia' (feeling into).",
+    "example": "An empathetic listener makes people feel safe to share."
+  },
+  {
+    "id": "compassionate",
+    "word": "Compassionate",
+    "ipa": "/kəmˈpæʃ.ən.ət/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Feeling deep sympathy and wanting to ease someone's pain.",
+    "basicAlt": "Caring about others' pain",
+    "origin": "Latin 'compati' (to suffer with).",
+    "example": "The compassionate nurse sat with the worried family."
+  },
+  {
+    "id": "diligent",
+    "word": "Diligent",
+    "ipa": "/ˈdɪl.ɪ.dʒənt/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Working hard and carefully, with steady effort.",
+    "basicAlt": "Hard-working",
+    "origin": "Latin 'diligere' (to value, to love).",
+    "example": "A diligent student reviews the notes every week."
+  },
+  {
+    "id": "humble",
+    "word": "Humble",
+    "ipa": "/ˈhʌm.bəl/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Modest, not proud of your achievements.",
+    "basicAlt": "Modest",
+    "origin": "Latin 'humilis' (low, from the ground).",
+    "example": "Even after winning, he stayed humble."
+  },
+  {
+    "id": "meticulous",
+    "word": "Meticulous",
+    "ipa": "/məˈtɪk.jʊ.ləs/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Very careful and paying attention to every detail.",
+    "basicAlt": "Very careful",
+    "origin": "Latin 'meticulosus' (fearful, careful).",
+    "example": "She kept meticulous notes for every experiment."
+  },
+  {
+    "id": "eccentric",
+    "word": "Eccentric",
+    "ipa": "/ɪkˈsen.trɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Unusual or strange in behavior, in a way that is interesting.",
+    "basicAlt": "Unusual and quirky",
+    "origin": "Greek 'ekkentros' (out of center).",
+    "example": "The professor had an eccentric way of teaching."
+  },
+  {
+    "id": "articulate",
+    "word": "Articulate",
+    "ipa": "/ɑːˈtɪk.jʊ.lət/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Able to express ideas clearly and well.",
+    "basicAlt": "Clear when speaking",
+    "origin": "Latin 'articulare' (to divide into joints).",
+    "example": "The articulate speaker answered every question with ease."
+  },
+  {
+    "id": "charismatic",
+    "word": "Charismatic",
+    "ipa": "/ˌkær.ɪzˈmæt.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Having a strong, attractive personality that draws people in.",
+    "basicAlt": "Very charming",
+    "origin": "Greek 'charisma' (divine gift, favor).",
+    "example": "The charismatic host kept the whole audience engaged."
+  },
+  {
+    "id": "assertive",
+    "word": "Assertive",
+    "ipa": "/əˈsɜː.tɪv/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Confident in stating your needs and opinions politely.",
+    "basicAlt": "Confident and direct",
+    "origin": "Latin 'asserere' (to claim).",
+    "example": "Being assertive helps you ask for feedback."
+  },
+  {
+    "id": "frugal",
+    "word": "Frugal",
+    "ipa": "/ˈfruː.ɡəl/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Careful with money and avoiding waste.",
+    "basicAlt": "Careful with money",
+    "origin": "Latin 'frugalis' (useful, economical).",
+    "example": "They lived a frugal life while saving for school."
+  },
+  {
+    "id": "sincere",
+    "word": "Sincere",
+    "ipa": "/sɪnˈsɪər/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Honest and genuine in what you feel and say.",
+    "basicAlt": "Honest and real",
+    "origin": "Latin 'sincerus' (clean, pure).",
+    "example": "Thank you for your sincere feedback."
+  },
+  {
+    "id": "meek",
+    "word": "Meek",
+    "ipa": "/miːk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Quiet and gentle, not likely to argue or push.",
+    "basicAlt": "Quiet and gentle",
+    "origin": "Old Norse 'mjúkr' (soft).",
+    "example": "The meek student rarely spoke up in class."
+  },
+  {
+    "id": "diplomatic",
+    "word": "Diplomatic",
+    "ipa": "/ˌdɪp.ləˈmæt.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Good at handling sensitive situations without causing offense.",
+    "basicAlt": "Tactful",
+    "origin": "Greek 'diplōma' (a folded document).",
+    "example": "She was diplomatic when correcting her teammate."
+  },
+  {
+    "id": "ambitious",
+    "word": "Ambitious",
+    "ipa": "/æmˈbɪʃ.əs/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Having a strong desire to succeed and achieve big goals.",
+    "basicAlt": "Wanting to achieve a lot",
+    "origin": "Latin 'ambitio' (going around to seek favor).",
+    "example": "He set ambitious goals for the semester."
+  },
+  {
+    "id": "gullible",
+    "word": "Gullible",
+    "ipa": "/ˈɡʌl.ə.bəl/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Easily tricked or persuaded to believe something.",
+    "basicAlt": "Easily fooled",
+    "origin": "From 'gull' (to deceive).",
+    "example": "Don't be gullible about offers that promise instant results."
+  },
+  {
+    "id": "pessimistic",
+    "word": "Pessimistic",
+    "ipa": "/ˌpes.ɪˈmɪs.tɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Expecting the worst to happen.",
+    "basicAlt": "Expecting bad results",
+    "origin": "Latin 'pessimus' (worst).",
+    "example": "He was pessimistic about passing the exam."
+  },
+  {
+    "id": "optimistic",
+    "word": "Optimistic",
+    "ipa": "/ˌɒp.tɪˈmɪs.tɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Expecting good things to happen.",
+    "basicAlt": "Expecting good results",
+    "origin": "Latin 'optimus' (best).",
+    "example": "She stayed optimistic despite the setbacks."
+  },
+  {
+    "id": "resourceful",
+    "word": "Resourceful",
+    "ipa": "/rɪˈzɔːs.fəl/",
+    "pos": "ADJECTIVE",
+    "category": "Character & Style",
+    "badgeColor": "bg-sky",
+    "definition": "Good at finding solutions when resources are limited.",
+    "basicAlt": "Good at solving problems",
+    "origin": "From 'resource' (French 'ressource').",
+    "example": "A resourceful team finds a way even with limited tools."
+  },
+  {
+    "id": "chronic",
+    "word": "Chronic",
+    "ipa": "/ˈkrɒn.ɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Lasting for a long time or happening again and again.",
+    "basicAlt": "Long-lasting",
+    "origin": "Greek 'khronos' (time).",
+    "example": "Chronic lateness can hurt your reputation at work."
+  },
+  {
+    "id": "impromptu",
+    "word": "Impromptu",
+    "ipa": "/ɪmˈprɒmp.tjuː/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Done without planning, on the spur of the moment.",
+    "basicAlt": "Unplanned",
+    "origin": "Latin 'in promptu' (in readiness).",
+    "example": "We gave an impromptu speech when the speaker was late."
+  },
+  {
+    "id": "hasty",
+    "word": "Hasty",
+    "ipa": "/ˈheɪ.sti/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Done too quickly, without enough care.",
+    "basicAlt": "Too quick",
+    "origin": "Middle English 'haste' (speed).",
+    "example": "A hasty decision can lead to avoidable mistakes."
+  },
+  {
+    "id": "sequential",
+    "word": "Sequential",
+    "ipa": "/sɪˈkwen.ʃəl/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Following one after another in a logical order.",
+    "basicAlt": "In order, one by one",
+    "origin": "Latin 'sequi' (to follow).",
+    "example": "Follow the sequential steps in the manual."
+  },
+  {
+    "id": "timely",
+    "word": "Timely",
+    "ipa": "/ˈtaɪm.li/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Happening at the right moment.",
+    "basicAlt": "On time",
+    "origin": "Old English 'tīma' (time).",
+    "example": "Thank you for the timely reply."
+  },
+  {
+    "id": "retrospective",
+    "word": "Retrospective",
+    "ipa": "/ˌret.rəʊˈspek.tɪv/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Looking back at past events.",
+    "basicAlt": "Looking back",
+    "origin": "Latin 'retro' (backward) and 'specere' (to look).",
+    "example": "The retrospective chapter reviews the company's history."
+  },
+  {
+    "id": "prospect",
+    "word": "Prospect",
+    "ipa": "/ˈprɒs.pekt/",
+    "pos": "NOUN",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "A possibility that something will happen in the future.",
+    "basicAlt": "A possible future event",
+    "origin": "Latin 'prospectus' (a view forward).",
+    "example": "The prospect of a new job excited him."
+  },
+  {
+    "id": "transient",
+    "word": "Transient",
+    "ipa": "/ˈtræn.zi.ənt/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Lasting only for a short time.",
+    "basicAlt": "Short-lived",
+    "origin": "Latin 'transire' (to go across).",
+    "example": "Fame can be transient if it is not built on real skill."
+  },
+  {
+    "id": "eventual",
+    "word": "Eventual",
+    "ipa": "/ɪˈven.tʃu.əl/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Happening in the end, after some time.",
+    "basicAlt": "Final, in the end",
+    "origin": "From 'event' (Latin 'eventus', outcome).",
+    "example": "Their eventual success came after years of practice."
+  },
+  {
+    "id": "chronology",
+    "word": "Chronology",
+    "ipa": "/krəˈnɒl.ə.dʒi/",
+    "pos": "NOUN",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "The order in which events happened.",
+    "basicAlt": "Order of events",
+    "origin": "Greek 'khronos' (time) and 'logos' (study).",
+    "example": "Put the events in chronology before you start writing."
+  },
+  {
+    "id": "anachronism",
+    "word": "Anachronism",
+    "ipa": "/əˈnæk.rə.nɪ.zəm/",
+    "pos": "NOUN",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Something placed in the wrong time period.",
+    "basicAlt": "Something from the wrong era",
+    "origin": "Greek 'ana-' (against) and 'khronos' (time).",
+    "example": "A smartphone in a medieval story is an anachronism."
+  },
+  {
+    "id": "fleeting",
+    "word": "Fleeting",
+    "ipa": "/ˈfliː.tɪŋ/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Passing very quickly.",
+    "basicAlt": "Very brief",
+    "origin": "Old English 'flēotan' (to float).",
+    "example": "A fleeting moment of silence filled the room."
+  },
+  {
+    "id": "contemporary",
+    "word": "Contemporary",
+    "ipa": "/kənˈtem.pər.ər.i/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Existing or happening at the same time as now.",
+    "basicAlt": "Modern, current",
+    "origin": "Latin 'contemporarius' (of the same time).",
+    "example": "The class studies contemporary English writers."
+  },
+  {
+    "id": "hiatus",
+    "word": "Hiatus",
+    "ipa": "/haɪˈeɪ.təs/",
+    "pos": "NOUN",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "A pause or break in an activity.",
+    "basicAlt": "A break",
+    "origin": "Latin 'hiatus' (gap, opening).",
+    "example": "After a short hiatus, the podcast returned with new episodes."
+  },
+  {
+    "id": "spontaneous",
+    "word": "Spontaneous",
+    "ipa": "/spɒnˈteɪ.ni.əs/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Done naturally, without planning.",
+    "basicAlt": "Unplanned and natural",
+    "origin": "Latin 'sponte' (of one's own accord).",
+    "example": "We made a spontaneous trip to the beach."
+  },
+  {
+    "id": "belated",
+    "word": "Belated",
+    "ipa": "/bɪˈleɪ.tɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Time & Society",
+    "badgeColor": "bg-lilac",
+    "definition": "Happening later than expected.",
+    "basicAlt": "Late",
+    "origin": "From 'be-' and 'late'.",
+    "example": "A belated thank-you note still means a lot."
+  },
+  {
+    "id": "verdant",
+    "word": "Verdant",
+    "ipa": "/ˈvɜː.dənt/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Covered in green grass or plants.",
+    "basicAlt": "Very green",
+    "origin": "Old French 'verd' (green).",
+    "example": "We walked through the verdant hills near campus."
+  },
+  {
+    "id": "tranquil",
+    "word": "Tranquil",
+    "ipa": "/ˈtræŋ.kwɪl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Calm, quiet, and peaceful.",
+    "basicAlt": "Calm and quiet",
+    "origin": "Latin 'tranquillus' (calm).",
+    "example": "The lake looked tranquil at dawn."
+  },
+  {
+    "id": "arid",
+    "word": "Arid",
+    "ipa": "/ˈær.ɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Very dry, with little rain.",
+    "basicAlt": "Very dry",
+    "origin": "Latin 'aridus' (dry).",
+    "example": "The arid desert has very few plants."
+  },
+  {
+    "id": "hazy",
+    "word": "Hazy",
+    "ipa": "/ˈheɪ.zi/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Not clear, partly covered by mist or fog.",
+    "basicAlt": "Foggy and unclear",
+    "origin": "Related to 'haze' (fog or mist).",
+    "example": "The hazy skyline made the city look dreamy."
+  },
+  {
+    "id": "torrential",
+    "word": "Torrential",
+    "ipa": "/təˈren.ʃəl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Falling very heavily, like a flood.",
+    "basicAlt": "Very heavy",
+    "origin": "Latin 'torrens' (rushing, burning).",
+    "example": "Torrential rain flooded the street in minutes."
+  },
+  {
+    "id": "crisp",
+    "word": "Crisp",
+    "ipa": "/krɪsp/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Cool, fresh, and clear, especially the air.",
+    "basicAlt": "Fresh and cool",
+    "origin": "Old English 'crisp' (curled).",
+    "example": "The crisp morning air made the run refreshing."
+  },
+  {
+    "id": "scenic",
+    "word": "Scenic",
+    "ipa": "/ˈsiː.nɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Having beautiful natural views.",
+    "basicAlt": "Beautiful to look at",
+    "origin": "Greek 'skēnē' (stage, scene).",
+    "example": "We took the scenic route along the coast."
+  },
+  {
+    "id": "barren",
+    "word": "Barren",
+    "ipa": "/ˈbær.ən/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Empty, with no plants growing.",
+    "basicAlt": "No plants, empty",
+    "origin": "Old English 'bær' (barren).",
+    "example": "The barren land was unsuitable for farming."
+  },
+  {
+    "id": "vast",
+    "word": "Vast",
+    "ipa": "/vɑːst/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Extremely large in area or amount.",
+    "basicAlt": "Very large",
+    "origin": "Latin 'vastus' (empty, huge).",
+    "example": "The vast ocean stretched to the horizon."
+  },
+  {
+    "id": "dense",
+    "word": "Dense",
+    "ipa": "/dens/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Thick and tightly packed, hard to see through.",
+    "basicAlt": "Thick and packed",
+    "origin": "Latin 'densus' (thick).",
+    "example": "We walked through dense fog on the mountain."
+  },
+  {
+    "id": "humid",
+    "word": "Humid",
+    "ipa": "/ˈhjuː.mɪd/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Warm and wet, with lots of moisture in the air.",
+    "basicAlt": "Warm and wet",
+    "origin": "Latin 'humidus' (moist).",
+    "example": "The humid afternoon made everyone sleepy."
+  },
+  {
+    "id": "celestial",
+    "word": "Celestial",
+    "ipa": "/səˈles.tʃəl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Relating to the sky or the heavens.",
+    "basicAlt": "Related to the sky",
+    "origin": "Latin 'caelestis' (of the sky).",
+    "example": "The celestial view from the hilltop was breathtaking."
+  },
+  {
+    "id": "ethereal",
+    "word": "Ethereal",
+    "ipa": "/ɪˈθɪə.ri.əl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Extremely light and delicate, almost heavenly.",
+    "basicAlt": "Light and delicate",
+    "origin": "Greek 'aithēr' (upper air).",
+    "example": "The ethereal mist floated over the lake."
+  },
+  {
+    "id": "rustic",
+    "word": "Rustic",
+    "ipa": "/ˈrʌs.tɪk/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Simple and related to the countryside.",
+    "basicAlt": "Simple and countryside-style",
+    "origin": "Latin 'rusticus' (of the countryside).",
+    "example": "The café has a rustic wooden charm."
+  },
+  {
+    "id": "tropical",
+    "word": "Tropical",
+    "ipa": "/ˈtrɒp.ɪ.kəl/",
+    "pos": "ADJECTIVE",
+    "category": "Nature & Atmosphere",
+    "badgeColor": "bg-mint",
+    "definition": "Relating to the hot, wet areas near the equator.",
+    "basicAlt": "Hot and wet",
+    "origin": "Greek 'tropikos' (of a turn, of the solstice).",
+    "example": "The tropical island has warm weather all year."
   }
 ];
 
@@ -3314,6 +4154,7 @@ let authUser = null;     // Supabase auth user (id, email)
 let profile = null;      // row from public.profiles (name, avatar_url, created_at)
 let progressCache = null; // row from public.progress, kept in memory and saved back
 let saveTimer = null;
+let pendingEmail = "";
 
 const EMPTY_PROGRESS = () => ({
   mastered: [], quizResults: [], bestByUnit: {}, practiced: [], storiesRead: [], activity: {}, notes: {},
@@ -3561,10 +4402,17 @@ async function handleLoginSubmit(e) {
   btn.textContent = "SEND SIGN-IN LINK →";
 
   if (error) {
-    err.textContent = error.message;
+    const rateLimited = /rate|too many|over_email_send/i.test(`${error.code || ""} ${error.message || ""}`);
+    err.textContent = rateLimited
+      ? "Too many sign-in emails were sent recently. Please wait about an hour and try again."
+      : error.message;
     return;
   }
-  msg.textContent = `Link sent to ${email}. Open it on this device to continue.`;
+  pendingEmail = email;
+  document.getElementById("loginForm").hidden = true;
+  document.getElementById("otpSentTo").textContent = email;
+  document.getElementById("otpForm").hidden = false;
+  document.getElementById("otpCode").focus();
 }
 
 async function signOutAndReload() {
@@ -3704,6 +4552,30 @@ function setupProfile() {
     document.getElementById("googleLoginBtn").style.display = "none";
     document.getElementById("loginDivider").style.display = "none";
   }
+  document.getElementById("otpForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const token = document.getElementById("otpCode").value.trim();
+    const err = document.getElementById("otpError");
+    if (!/^\d{6}$/.test(token)) {
+      err.textContent = "Enter the 6-digit code from the email.";
+      return;
+    }
+    err.textContent = "";
+    const { error } = await sb.auth.verifyOtp({ email: pendingEmail, token, type: "email" });
+    if (error) {
+      err.textContent = error.message;
+      return;
+    }
+    location.reload();
+  });
+
+  document.getElementById("otpBack").addEventListener("click", () => {
+    document.getElementById("otpForm").hidden = true;
+    document.getElementById("loginForm").hidden = false;
+    document.getElementById("otpError").textContent = "";
+    document.getElementById("otpCode").value = "";
+  });
+
   document.getElementById("googleLoginBtn").addEventListener("click", async () => {
     const err = document.getElementById("loginError");
     if (!sb) {
