@@ -4154,7 +4154,6 @@ let authUser = null;     // Supabase auth user (id, email)
 let profile = null;      // row from public.profiles (name, avatar_url, created_at)
 let progressCache = null; // row from public.progress, kept in memory and saved back
 let saveTimer = null;
-let pendingEmail = "";
 
 const EMPTY_PROGRESS = () => ({
   mastered: [], quizResults: [], bestByUnit: {}, practiced: [], storiesRead: [], activity: {}, notes: {},
@@ -4408,11 +4407,7 @@ async function handleLoginSubmit(e) {
       : error.message;
     return;
   }
-  pendingEmail = email;
-  document.getElementById("loginForm").hidden = true;
-  document.getElementById("otpSentTo").textContent = email;
-  document.getElementById("otpForm").hidden = false;
-  document.getElementById("otpCode").focus();
+  msg.textContent = `Link sent to ${email}. Open it in this same browser to sign in.`;
 }
 
 async function signOutAndReload() {
@@ -4552,38 +4547,6 @@ function setupProfile() {
     document.getElementById("googleLoginBtn").style.display = "none";
     document.getElementById("loginDivider").style.display = "none";
   }
-  document.getElementById("otpForm").addEventListener("submit", async (e) => {
-    e.preventDefault();
-    const token = document.getElementById("otpCode").value.trim();
-    const err = document.getElementById("otpError");
-    if (!/^\d{6}$/.test(token)) {
-      err.textContent = "Enter the 6-digit code from the email.";
-      return;
-    }
-    err.textContent = "";
-    // New users get a "signup" token, existing users an "email" token.
-    // Try each type in turn so the right one is used either way.
-    const types = ["email", "signup", "magiclink"];
-    let lastError = null;
-    for (const type of types) {
-      const { error } = await sb.auth.verifyOtp({ email: pendingEmail, token, type });
-      if (!error) {
-        location.reload();
-        return;
-      }
-      lastError = error;
-    }
-    err.textContent = "This code is invalid or has expired. Use the most recent code from the latest email.";
-    console.error("OTP verification failed:", lastError);
-  });
-
-  document.getElementById("otpBack").addEventListener("click", () => {
-    document.getElementById("otpForm").hidden = true;
-    document.getElementById("loginForm").hidden = false;
-    document.getElementById("otpError").textContent = "";
-    document.getElementById("otpCode").value = "";
-  });
-
   document.getElementById("googleLoginBtn").addEventListener("click", async () => {
     const err = document.getElementById("loginError");
     if (!sb) {
