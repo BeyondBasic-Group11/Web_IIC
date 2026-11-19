@@ -4561,12 +4561,20 @@ function setupProfile() {
       return;
     }
     err.textContent = "";
-    const { error } = await sb.auth.verifyOtp({ email: pendingEmail, token, type: "email" });
-    if (error) {
-      err.textContent = error.message;
-      return;
+    // New users get a "signup" token, existing users an "email" token.
+    // Try each type in turn so the right one is used either way.
+    const types = ["email", "signup", "magiclink"];
+    let lastError = null;
+    for (const type of types) {
+      const { error } = await sb.auth.verifyOtp({ email: pendingEmail, token, type });
+      if (!error) {
+        location.reload();
+        return;
+      }
+      lastError = error;
     }
-    location.reload();
+    err.textContent = "This code is invalid or has expired. Use the most recent code from the latest email.";
+    console.error("OTP verification failed:", lastError);
   });
 
   document.getElementById("otpBack").addEventListener("click", () => {
