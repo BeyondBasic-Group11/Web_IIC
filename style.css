@@ -2514,3 +2514,83 @@ body { line-height: 1.6; }
 .otp-step { margin-top: 0; }
 .otp-back { align-self: flex-start; }
 #otpCode { letter-spacing: 0.3em; text-align: center; font-size: 1.2rem; font-weight: 800; }
+
+/* ==========================================================================
+   QUIET LAYER: fewer competing colors, same neo-brutalist structure
+   Colour stays for the main action and for the MIDTERM / FINAL split.
+   Labels, unit badges and window bars become neutral.
+   ========================================================================== */
+
+/* Neutral pills and badges inside content areas */
+.unit-mini-card .unit-num,
+.vocab-card .tag-pill,
+.subtopic-card .tag-pill,
+.page-top-banner .tag-pill,
+.pf-stat .tag-pill,
+.pf-panel .tag-pill,
+.wotd-window .tag-pill,
+.read-first .tag-pill,
+.unit-workspace-window .tag-pill {
+  background: var(--surface-alt) !important;
+  color: var(--ink) !important;
+  border: 1.5px solid var(--border);
+  box-shadow: none;
+}
+
+/* Keep color only on the MIDTERM / FINAL headings */
+.exam-group-head .tag-pill { border-width: 2px; }
+
+/* Calmer window title bars: plain, not blue or yellow */
+.wotd-window .os-titlebar,
+.quiz-window .os-titlebar,
+.unit-workspace-window .os-titlebar {
+  background: var(--surface-alt) !important;
+  color: var(--ink);
+  border-bottom: 2px solid var(--border);
+}
+
+/* Secondary buttons: neutral. Yellow stays as the primary action. */
+.brutal-btn.bg-sky,
+.brutal-btn.bg-mint,
+.brutal-btn.bg-coral,
+.brutal-btn.bg-lilac,
+.brutal-btn.bg-peach,
+.brutal-btn-sm.bg-sky,
+.brutal-btn-sm.bg-mint,
+.brutal-btn-sm.bg-coral,
+.brutal-btn-sm.bg-lilac,
+.brutal-btn-sm.bg-peach {
+  background: var(--surface) !important;
+  color: var(--ink) !important;
+}
+
+/* Hero: one flat surface, no competing colored blocks */
+#page-home .poster-block,
+#page-home .wotd-window {
+  background: var(--surface);
+}
+
+/* Quote strip: quiet, not a color block */
+#page-home .quote-strip {
+  background: var(--surface);
+}
+
+/* Cards: calmer hover, no jumping */
+.unit-mini-card:hover,
+.vocab-card:hover,
+.subtopic-card:hover {
+  transform: none;
+  box-shadow: 3px 3px 0 var(--shadow);
+}
+
+/* More air between blocks and between text lines */
+.page-top-banner { margin-bottom: 28px; }
+.unit-mini-card,
+.vocab-card { padding: 18px; }
+body { letter-spacing: 0.005em; }
+
+/* Mobile: cards a little tighter, text still comfortable */
+@media (max-width: 599px) {
+  .unit-mini-card,
+  .vocab-card { padding: 14px; }
+}
