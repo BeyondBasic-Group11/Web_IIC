@@ -4529,11 +4529,11 @@ function renderProfile() {
   const unitBars = UNITS_DATA.map((u) => {
     const key = String(u.unit).padStart(2, "0");
     const pct = p.bestByUnit[key] || 0;
-    const color = u.exam === "MIDTERM" ? "bg-sky" : "bg-coral";
+    const color = u.exam === "MIDTERM" ? "var(--exam-mid)" : "var(--exam-fin)";
     return `
       <div class="pf-bar-col" title="Unit ${key}: best ${pct}%">
         <span class="pf-bar-val">${pct}%</span>
-        <div class="pf-bar-track"><div class="pf-bar-fill ${color}" style="height:${pct}%"></div></div>
+        <div class="pf-bar-track"><div class="pf-bar-fill" style="height:${pct}%;background:${color}"></div></div>
         <span class="pf-bar-label">${key}</span>
       </div>`;
   }).join("");
@@ -4604,7 +4604,7 @@ function renderProfile() {
     <div class="pf-panel">
       <div class="pf-panel-title">BEST QUIZ SCORE PER UNIT</div>
       <div class="pf-bars">${unitBars}</div>
-      <div class="pf-legend"><span class="tag-pill bg-sky">MIDTERM</span><span class="tag-pill bg-coral">FINAL</span></div>
+      <div class="pf-legend"><span class="pf-legend-item"><i class="pf-swatch" style="background:var(--exam-mid)"></i>MIDTERM</span><span class="pf-legend-item"><i class="pf-swatch" style="background:var(--exam-fin)"></i>FINAL</span></div>
     </div>
 
     <div class="pf-grid-2">

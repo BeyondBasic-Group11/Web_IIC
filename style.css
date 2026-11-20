@@ -2599,6 +2599,8 @@ body { letter-spacing: 0.005em; }
    DECORATIONS (both styles): soft tints in CALM, solid colours in BOLD
    ========================================================================== */
 :root {
+  --exam-mid: #9fd3ff;   /* MIDTERM: sky */
+  --exam-fin: #ff9e9e;   /* FINAL: coral */
   --deco-a: #dcd2ff;   /* lavender */
   --deco-b: #dff3c4;   /* soft lime */
   --deco-c: #ffe0ea;   /* soft pink */
@@ -2638,16 +2640,32 @@ body { letter-spacing: 0.005em; }
 .deco-dots svg .fill-dots { fill: var(--deco-c); }
 .deco-dots svg circle:last-child { fill: var(--deco-line); stroke: none; }
 
-.deco-star-hero  { width: 60px; height: 60px; top: -22px; right: -16px; }
-.deco-dots-hero  { width: 78px; height: 78px; bottom: -24px; right: -20px; }
-.deco-zig-hero   { width: 120px; height: 32px; bottom: -14px; left: 28px; }
-.deco-star-login { width: 50px; height: 50px; top: -16px; right: 8%; }
-.deco-dots-login { width: 76px; height: 76px; bottom: 8%; left: -4%; }
+.deco-star-hero  { width: 96px; height: 96px; top: -34px; right: -26px; }
+.deco-dots-hero  { width: 120px; height: 120px; bottom: -34px; right: -28px; }
+.deco-zig-hero   { width: 180px; height: 48px; bottom: -20px; left: 28px; }
+.deco-star-login { width: 84px; height: 84px; top: -26px; right: 6%; }
+.deco-dots-login { width: 112px; height: 112px; bottom: 8%; left: -6%; }
 
 @media (max-width: 599px) {
-  .deco-star-hero  { width: 40px; height: 40px; top: -14px; right: -8px; }
-  .deco-dots-hero  { width: 54px; height: 54px; bottom: -18px; right: -10px; }
-  .deco-zig-hero   { width: 96px; left: 18px; }
-  .deco-star-login { width: 36px; height: 36px; }
-  .deco-dots-login { width: 54px; height: 54px; }
+  .deco-star-hero  { width: 64px; height: 64px; top: -20px; right: -10px; }
+  .deco-dots-hero  { width: 84px; height: 84px; bottom: -22px; right: -12px; }
+  .deco-zig-hero   { width: 130px; height: 36px; left: 18px; }
+  .deco-star-login { width: 60px; height: 60px; }
+  .deco-dots-login { width: 80px; height: 80px; }
+}
+
+/* Chart legend: swatches that match the bars */
+.pf-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+.pf-swatch {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid var(--border);
 }

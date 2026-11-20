@@ -155,6 +155,8 @@ h1, h2, h3,
 .deco-dots svg .fill-dots { fill: var(--bold-pink); }
 .deco-dots svg circle:last-child { fill: var(--bold-line); }
 
+:root { --exam-mid: var(--bold-purple); --exam-fin: var(--bold-orange); }
+.pf-swatch { border-color: var(--bold-line); border-width: 2.5px; }
 .deco-star-hero { animation: boldSpin 9s linear infinite; }
 @keyframes boldSpin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .deco-star-hero { animation: none; } }
