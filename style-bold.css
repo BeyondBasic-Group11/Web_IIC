@@ -155,8 +155,107 @@ h1, h2, h3,
 .deco-dots svg .fill-dots { fill: var(--bold-pink); }
 .deco-dots svg circle:last-child { fill: var(--bold-line); }
 
-:root { --exam-mid: var(--bold-purple); --exam-fin: var(--bold-orange); }
+:root {
+  --exam-mid: var(--bold-purple);
+  --exam-fin: var(--bold-orange);
+  --chart-1: var(--bold-purple);
+  --chart-2: var(--bold-lime);
+  --chart-3: var(--bold-pink);
+  --chart-4: var(--bold-orange);
+}
+.pf-trend-line { stroke: var(--bold-line); stroke-width: 4; }
+.pf-trend-dot { stroke: var(--bold-line); stroke-width: 3; }
 .pf-swatch { border-color: var(--bold-line); border-width: 2.5px; }
 .deco-star-hero { animation: boldSpin 9s linear infinite; }
 @keyframes boldSpin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .deco-star-hero { animation: none; } }
+
+/* ==========================================================================
+   HOMEPAGE ORNAMENTS: wave, plus, arrow and zigzag shapes (BOLD only).
+   Shapes use CSS masks, so their colour follows the theme.
+   ========================================================================== */
+.ornament-wave,
+.ornament-plus,
+.ornament-arrow,
+.ornament-zig { display: block; }
+
+/* Wave under the section headings */
+#page-home .home-section-heading { position: relative; padding-bottom: 20px; }
+#page-home .home-section-heading::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 150px;
+  height: 14px;
+  background: var(--bold-orange);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 16'><path d='M0 8 Q 15 0 30 8 T 60 8 T 90 8 T 120 8' fill='none' stroke='black' stroke-width='3.5'/></svg>") no-repeat left center / contain;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 16'><path d='M0 8 Q 15 0 30 8 T 60 8 T 90 8 T 120 8' fill='none' stroke='black' stroke-width='3.5'/></svg>") no-repeat left center / contain;
+  pointer-events: none;
+}
+
+/* Plus sign on the quote strip corner */
+#page-home .quote-banner-wrap { position: relative; }
+#page-home .quote-banner-wrap::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 30px;
+  height: 30px;
+  background: var(--bold-pink);
+  border: 2.5px solid var(--bold-line);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Small plus in the corner of each unit card */
+#page-home .unit-mini-card { position: relative; }
+#page-home .unit-mini-card::after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  width: 16px;
+  height: 16px;
+  background: var(--bold-line);
+  opacity: 0.55;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 1 V15 M1 8 H15' stroke='black' stroke-width='3'/></svg>") no-repeat center / contain;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M8 1 V15 M1 8 H15' stroke='black' stroke-width='3'/></svg>") no-repeat center / contain;
+  pointer-events: none;
+}
+
+/* Hand-drawn arrow after the MIDTERM / FINAL headings */
+#page-home .exam-group-head { position: relative; }
+#page-home .exam-group-head::after {
+  content: "";
+  flex: 0 0 90px;
+  height: 16px;
+  margin-left: 6px;
+  background: var(--bold-line);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 16'><path d='M2 8 Q 30 3 70 8 M60 2 L72 8 L60 14' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat left center / contain;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 90 16'><path d='M2 8 Q 30 3 70 8 M60 2 L72 8 L60 14' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/></svg>") no-repeat left center / contain;
+  pointer-events: none;
+}
+
+/* Zigzag edge along the top of the footer */
+.site-footer { position: relative; }
+.site-footer::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: var(--bold-line);
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 14'><path d='M0 12 L10 2 L20 12 L30 2 L40 12' fill='none' stroke='black' stroke-width='3'/></svg>") repeat-x left center / 40px 14px;
+          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 14'><path d='M0 12 L10 2 L20 12 L30 2 L40 12' fill='none' stroke='black' stroke-width='3'/></svg>") repeat-x left center / 40px 14px;
+  pointer-events: none;
+}
+
+/* Smaller ornaments on phones */
+@media (max-width: 599px) {
+  #page-home .home-section-heading::after { width: 110px; height: 11px; }
+  #page-home .quote-banner-wrap::after { width: 24px; height: 24px; top: -10px; right: -8px; }
+  #page-home .exam-group-head::after { flex-basis: 60px; height: 12px; }
+}

@@ -3920,6 +3920,7 @@ function selectStory(index) {
   stopSpeech();
   state.activeStoryIndex = index;
   renderStories();
+  playAnim(document.querySelector(".story-window"), "slide-in");
 }
 
 function setupStoryControls() {
@@ -4570,6 +4571,15 @@ function renderProfile() {
       <li><span>${r.date}</span><span>${r.label}</span><strong>${r.score}/${r.total} · ${r.pct}%</strong></li>`).join("")
     || `<li class="pf-empty">No quiz attempts yet. Try a quick quiz!</li>`;
 
+  const progressBars = buildProgressBars([
+    ["UNITS PRACTICED", `${p.practiced.length}/${UNITS_DATA.length}`, UNITS_DATA.length, Math.round((p.practiced.length / UNITS_DATA.length) * 100), "var(--chart-1)"],
+    ["STORIES READ", `${p.storiesRead.length}/${STORIES_DATA.length}`, STORIES_DATA.length, Math.round((p.storiesRead.length / STORIES_DATA.length) * 100), "var(--chart-2)"],
+    ["VOCABULARY MASTERED", `${masteredWords}/${VOCAB_DATA.length}`, VOCAB_DATA.length, wordPct, "var(--chart-3)"],
+    ["QUIZ AVERAGE", avg === null ? "-" : `${avg}%`, 100, avg === null ? 0 : avg, "var(--chart-4)"],
+  ]);
+  const trendSvg = buildScoreTrend(p.quizResults);
+  const modeBars = buildModeBars(p.quizResults);
+
   const avatar = user.avatar
     ? `<img src="${user.avatar}" alt="Your profile photo" />`
     : `<span>${escAttr((user.name || "?").trim().charAt(0).toUpperCase())}</span>`;
@@ -4622,6 +4632,22 @@ function renderProfile() {
         <div class="pf-panel-title">ACTIVITY · LAST 7 DAYS</div>
         <div class="pf-bars pf-bars-small">${dayBars}</div>
       </div>
+    </div>
+
+    <div class="pf-grid-2">
+      <div class="pf-panel pf-chart-lg">
+        <div class="pf-panel-title">PROGRESS OVERVIEW</div>
+        ${progressBars}
+      </div>
+      <div class="pf-panel pf-chart-lg">
+        <div class="pf-panel-title">QUIZ SCORES BY TYPE</div>
+        ${modeBars}
+      </div>
+    </div>
+
+    <div class="pf-panel pf-chart-lg">
+      <div class="pf-panel-title">SCORE TREND · LAST 10 QUIZZES</div>
+      ${trendSvg}
     </div>
 
     <div class="pf-panel">
@@ -4728,4 +4754,56 @@ function setupProfile() {
   });
 
   renderNavAvatar();
+}
+
+
+// ---------- Dashboard charts ----------
+function buildScoreTrend(results) {
+  const pts = results.slice(0, 10).reverse();
+  if (pts.length === 0) {
+    return `<p class="pf-empty-chart">Take a quiz to see your score trend here.</p>`;
+  }
+  const W = 600, H = 230, padL = 40, padR = 20, padT = 18, padB = 30;
+  const innerW = W - padL - padR, innerH = H - padT - padB;
+  const x = (i) => (pts.length === 1 ? padL + innerW / 2 : padL + (i * innerW) / (pts.length - 1));
+  const y = (pct) => padT + innerH - (pct / 100) * innerH;
+  const grid = [0, 50, 100].map((v) =>
+    `<line class="pf-grid-line" x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}"></line>` +
+    `<text class="pf-axis" x="${padL - 8}" y="${y(v) + 4}" text-anchor="end">${v}%</text>`
+  ).join("");
+  const line = pts.length > 1
+    ? `<polyline class="pf-trend-line" points="${pts.map((r, i) => `${x(i)},${y(r.pct)}`).join(" ")}"></polyline>`
+    : "";
+  const dots = pts.map((r, i) =>
+    `<circle class="pf-trend-dot" cx="${x(i)}" cy="${y(r.pct)}" r="7"><title>${escAttr(r.label)}: ${r.pct}%</title></circle>`
+  ).join("");
+  const labels = pts.map((r, i) =>
+    `<text class="pf-axis" x="${x(i)}" y="${H - 8}" text-anchor="middle">${i + 1}</text>`
+  ).join("");
+  return `<svg class="pf-trend" viewBox="0 0 ${W} ${H}" role="img" aria-label="Quiz score trend">${grid}${line}${dots}${labels}</svg>`;
+}
+
+function buildModeBars(results) {
+  const groups = [
+    ["UNITS", (r) => /^UNIT/.test(r.label)],
+    ["WORDS", (r) => r.label === "WORDS"],
+    ["IDIOMS", (r) => r.label === "IDIOMS"],
+  ];
+  return groups.map(([name, test], i) => {
+    const items = results.filter(test);
+    const avg = items.length ? Math.round(items.reduce((sum, r) => sum + r.pct, 0) / items.length) : 0;
+    return `
+      <div class="pf-hbar">
+        <div class="pf-hbar-head"><span>${name}</span><span>${items.length} TRIES · AVG ${avg}%</span></div>
+        <div class="pf-hbar-track"><div class="pf-hbar-fill" style="width:${avg}%;background:var(--chart-${i + 1})"></div></div>
+      </div>`;
+  }).join("");
+}
+
+function buildProgressBars(items) {
+  return items.map(([label, value, total, pct, color]) => `
+      <div class="pf-hbar">
+        <div class="pf-hbar-head"><span>${label}</span><span>${value}</span></div>
+        <div class="pf-hbar-track"><div class="pf-hbar-fill" style="width:${pct}%;background:${color}"></div></div>
+      </div>`).join("");
 }
