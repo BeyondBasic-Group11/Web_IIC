@@ -15,8 +15,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=21" />
-  <link rel="stylesheet" href="style-bold.css?v=3" id="boldStyles" disabled />
+  <link rel="stylesheet" href="style.css?v=23" />
+  <link rel="stylesheet" href="style-bold.css?v=5" id="boldStyles" />
 </head>
 <body class="logged-out">
   <!-- ==================== TOP NAVBAR ==================== -->
@@ -46,7 +46,6 @@
           <span id="navMasteryCount">0/100</span>
         </div>
         <button id="navProfileBtn" class="profile-chip" data-nav="profile" aria-label="Open profile"></button>
-        <button id="styleToggle" class="brutal-btn-sm style-toggle" type="button" aria-label="Switch visual style">BOLD</button>
         <button id="themeToggle" class="brutal-btn-sm" aria-label="Toggle Theme">
           <span id="themeLabel">DARK</span>
         </button>
@@ -105,10 +104,10 @@
 
     <section id="page-home" class="page" aria-labelledby="hero-headline">
       <div class="hero-layout">
-    <div class="deco deco-star deco-star-hero"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L62 38 L96 50 L62 62 L50 96 L38 62 L4 50 L38 38 Z" /></svg></div>
-    <div class="deco deco-dots deco-dots-hero"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" /><circle cx="50" cy="50" r="28" class="fill-dots" /><circle cx="50" cy="50" r="6" /></svg></div>
-    <div class="deco deco-zig deco-zig-hero"><svg viewBox="0 0 160 40" aria-hidden="true"><polyline points="4,30 20,8 36,30 52,8 68,30 84,8 100,30 116,8 132,30 148,8" /></svg></div>
         <div class="poster-block">
+          <div class="deco deco-star deco-star-hero" aria-hidden="true"><svg viewBox="0 0 100 100" aria-hidden="true"><path d="M50 4 L62 38 L96 50 L62 62 L50 96 L38 62 L4 50 L38 38 Z" /></svg></div>
+          <div class="deco deco-dots deco-dots-hero" aria-hidden="true"><svg viewBox="0 0 100 100" aria-hidden="true"><circle cx="50" cy="50" r="46" /><circle cx="50" cy="50" r="28" class="fill-dots" /><circle cx="50" cy="50" r="6" /></svg></div>
+          <div class="deco deco-zig deco-zig-hero" aria-hidden="true"><svg viewBox="0 0 160 40" aria-hidden="true"><polyline points="4,30 20,8 36,30 52,8 68,30 84,8 100,30 116,8 132,30 148,8" /></svg></div>
           <div class="poster-meta-top">
             <span class="tag-pill bg-yellow">GROUP 11 · ENGLISH LAB</span>
           </div>
@@ -714,6 +713,6 @@
   <div id="toast" class="brutal-toast" role="status" aria-live="polite"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js?v=22"></script>
+  <script src="script.js?v=24"></script>
 </body>
 </html>

@@ -2,22 +2,9 @@
    BEYOND BASIC — Colorful Neo-Brutalist & Scannable English Lab (Group 11)
    ========================================================================== */
 
-// Calm (default) or bold visual style, remembered on this device
+// BOLD is the only visual style now
 function setupStyleToggle() {
-  const link = document.getElementById("boldStyles");
-  const btn = document.getElementById("styleToggle");
-  if (!link || !btn) return;
-  const isBold = localStorage.getItem("bb_style") === "bold";
-  link.disabled = !isBold;
-  btn.textContent = isBold ? "CALM" : "BOLD";
-  document.body.classList.toggle("bold-on", isBold);
-  btn.addEventListener("click", () => {
-    const nowBold = link.disabled;
-    link.disabled = !nowBold;
-    localStorage.setItem("bb_style", nowBold ? "bold" : "calm");
-    btn.textContent = nowBold ? "CALM" : "BOLD";
-    document.body.classList.toggle("bold-on", nowBold);
-  });
+  document.body.classList.add("bold-on");
 }
 
 // Restart a short CSS animation class on an element
@@ -2247,7 +2234,85 @@ const STORIES_DATA = [
       "Escaping a sudden downpour, I stepped into the {quintessential} second-hand bookshop behind campus. Inside a worn novel, a 1998 postcard slipped out. It was pure {serendipity}.",
       "Reading that tiny note sparked a warm wave of {nostalgia}, turning an {ephemeral} rainstorm into my favorite memory of the week."
     ]
-  }
+  },
+  {
+    id: "story-5",
+    tabTitle: "05. COFFEE BREAK",
+    title: "The Coffee Break Nobody Planned",
+    author: "DINA // CAMPUS LIFE",
+    tag: "CAMPUS",
+    readTime: "1 MIN READ",
+    prompt: "Write 1 sentence using 'gregarious', 'punctual', or 'impromptu'.",
+    paragraphs: [
+      "Our group meeting was supposed to start at nine, but Rafi arrived late and looked worried. Within minutes, a {gregarious} classmate started talking to everyone at the table, and the mood changed completely.",
+      "We ended up with an {impromptu} study session in the cafeteria. Even though we were not {punctual} at first, we finished the slides before lunch."
+    ]
+  },
+  {
+    id: "story-6",
+    tabTitle: "06. LAST MINUTE",
+    title: "The Assignment Due Tomorrow",
+    author: "ARYA // STUDY DIARY",
+    tag: "STUDY",
+    readTime: "1 MIN READ",
+    prompt: "Write 1 sentence using 'procrastinate', 'tenacious', or 'meticulous'.",
+    paragraphs: [
+      "I wanted to start my essay last week, but I kept choosing to {procrastinate} and watch videos instead. Tonight, with the deadline tomorrow, I finally sat down and began to write.",
+      "I was {tenacious} about finishing. I checked every sentence in a {meticulous} way, and by midnight the draft was complete and clear."
+    ]
+  },
+  {
+    id: "story-7",
+    tabTitle: "07. RAINY MORNING",
+    title: "Rain on the Market Road",
+    author: "NADIA // WEATHER NOTE",
+    tag: "NATURE",
+    readTime: "1 MIN READ",
+    prompt: "Write 1 sentence using 'torrential', 'verdant', or 'tranquil'.",
+    paragraphs: [
+      "The sky turned dark before sunrise, and a {torrential} rain fell on the market road. The vendors covered their stalls, and the street quickly became a river.",
+      "When the rain stopped, the hills looked {verdant} and fresh. For a few minutes, the air felt {tranquil}, and everyone stood still to enjoy the quiet."
+    ]
+  },
+  {
+    id: "story-8",
+    tabTitle: "08. JOB INTERVIEW",
+    title: "A Small Interview Surprise",
+    author: "RAFI // CAREER TALK",
+    tag: "CAREER",
+    readTime: "1 MIN READ",
+    prompt: "Write 1 sentence using 'articulate', 'candid', or 'resourceful'.",
+    paragraphs: [
+      "The interviewer asked about a project that had failed. I could have made excuses, but I decided to be {candid} and explain what I learned from the mistake.",
+      "She smiled and said I was {articulate} and {resourceful}. Her reaction showed that honesty can be as valuable as a perfect answer."
+    ]
+  },
+  {
+    id: "story-9",
+    tabTitle: "09. REUNION",
+    title: "The Reunion at the Old Gate",
+    author: "LINA // PERSONAL ESSAY",
+    tag: "EMOTION",
+    readTime: "1 MIN READ",
+    prompt: "Write 1 sentence using 'nostalgia', 'jubilant', or 'sentimental'.",
+    paragraphs: [
+      "I met my childhood friend at the old school gate after five years apart. The {nostalgia} hit me immediately, and we talked about the games we used to play there.",
+      "When we found our old photo in a box, we both became {sentimental}. We laughed, and then we were {jubilant} about meeting again."
+    ]
+  },
+  {
+    id: "story-10",
+    tabTitle: "10. TEAM DILEMMA",
+    title: "Two Ideas, One Presentation",
+    author: "ARIEL // TEAMWORK",
+    tag: "TEAMWORK",
+    readTime: "1 MIN READ",
+    prompt: "Write 1 sentence using 'diplomatic', 'empathetic', or 'pragmatic'.",
+    paragraphs: [
+      "Two of my teammates wanted different designs for our presentation. One wanted bold colors, and the other wanted a simple layout. I stayed {diplomatic} and asked each of them to explain their reasons.",
+      "After listening carefully, I suggested a {pragmatic} plan: keep the simple layout and use bold colors only for the title. Both of them agreed, and the final slides looked great."
+    ]
+  },
 ];
 
 // 6. Quiz Decks (4 Crisp Options A-D per Question)
@@ -3192,12 +3257,17 @@ function renderSpotlightWord() {
 }
 
 function setupSpotlightControls() {
+  state.spotlightIndex = Math.floor(Math.random() * VOCAB_DATA.length);
   renderSpotlightWord();
   document.getElementById("spotlightSpeakBtn").addEventListener("click", () => {
     speakText(VOCAB_DATA[state.spotlightIndex].word);
   });
   document.getElementById("spotlightShuffleBtn").addEventListener("click", () => {
-    state.spotlightIndex = (state.spotlightIndex + 1) % VOCAB_DATA.length;
+    let nextIndex = state.spotlightIndex;
+    while (nextIndex === state.spotlightIndex && VOCAB_DATA.length > 1) {
+      nextIndex = Math.floor(Math.random() * VOCAB_DATA.length);
+    }
+    state.spotlightIndex = nextIndex;
     renderSpotlightWord();
   });
 }

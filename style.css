@@ -2612,7 +2612,8 @@ body { letter-spacing: 0.005em; }
 }
 
 .hero-layout,
-.auth-layout { position: relative; }
+.auth-layout,
+#page-home .poster-block { position: relative; }
 
 .deco {
   display: block;
@@ -2637,16 +2638,16 @@ body { letter-spacing: 0.005em; }
 .deco-dots svg .fill-dots { fill: var(--deco-c); }
 .deco-dots svg circle:last-child { fill: var(--deco-line); stroke: none; }
 
-.deco-star-hero  { width: 64px; height: 64px; top: -20px; right: 6%; }
-.deco-dots-hero  { width: 90px; height: 90px; bottom: 6%; left: 2%; }
-.deco-zig-hero   { width: 140px; height: 36px; bottom: -8px; right: 14%; }
+.deco-star-hero  { width: 60px; height: 60px; top: -22px; right: -16px; }
+.deco-dots-hero  { width: 78px; height: 78px; bottom: -24px; right: -20px; }
+.deco-zig-hero   { width: 120px; height: 32px; bottom: -14px; left: 28px; }
 .deco-star-login { width: 50px; height: 50px; top: -16px; right: 8%; }
 .deco-dots-login { width: 76px; height: 76px; bottom: 8%; left: -4%; }
 
 @media (max-width: 599px) {
-  .deco-star-hero  { width: 44px; height: 44px; top: -12px; right: 4%; }
-  .deco-dots-hero  { width: 60px; height: 60px; }
-  .deco-zig-hero   { width: 100px; right: 6%; }
+  .deco-star-hero  { width: 40px; height: 40px; top: -14px; right: -8px; }
+  .deco-dots-hero  { width: 54px; height: 54px; bottom: -18px; right: -10px; }
+  .deco-zig-hero   { width: 96px; left: 18px; }
   .deco-star-login { width: 36px; height: 36px; }
   .deco-dots-login { width: 54px; height: 54px; }
 }
