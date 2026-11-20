@@ -1,0 +1,160 @@
+/* ==========================================================================
+   BOLD STYLE (optional): stronger neo-brutalism, loaded only when chosen.
+   Inspired by bold neo-brutalist layouts: heavy type, thick outlines,
+   hard shadows, visible grid, solid accent colours.
+   ========================================================================== */
+
+:root {
+  --bold-lime: #c9f75a;
+  --bold-purple: #b8a4ff;
+  --bold-orange: #ff7a1a;
+  --bold-pink: #ffb3c7;
+}
+
+:root[data-theme="dark"],
+:root:not([data-theme="light"]) {
+  --bold-line: #f2f2f2;
+}
+:root[data-theme="light"],
+:root { --bold-line: #111111; }
+
+/* Visible grid, like the reference */
+:root { --dot-color: rgba(0, 0, 0, 0.14); }
+:root[data-theme="dark"] { --dot-color: rgba(255, 255, 255, 0.12); }
+
+body {
+  background-size: 28px 28px;
+  letter-spacing: 0;
+}
+
+/* Heavy, tight headings */
+h1, h2, h3,
+.page-headline,
+.auth-title,
+.home-section-heading,
+.wotd-display,
+.mega-headline {
+  font-weight: 900 !important;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}
+
+/* Thick outlines and hard shadows */
+.os-window,
+.vocab-card,
+.unit-mini-card,
+.subtopic-card,
+.dialogue-box,
+.reflection-panel,
+.pf-panel,
+.pf-stat,
+.pf-header,
+.read-first,
+.auth-card,
+.poster-block,
+.wotd-window {
+  border: 3px solid var(--bold-line) !important;
+  box-shadow: 6px 6px 0 var(--bold-line) !important;
+  border-radius: 6px;
+}
+
+/* Buttons: chunky, press down on hover */
+.brutal-btn,
+.brutal-btn-sm {
+  border: 3px solid var(--bold-line) !important;
+  box-shadow: 4px 4px 0 var(--bold-line) !important;
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+.brutal-btn:hover,
+.brutal-btn-sm:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--bold-line) !important;
+}
+.brutal-btn:active,
+.brutal-btn-sm:active {
+  transform: translate(4px, 4px);
+  box-shadow: 0 0 0 var(--bold-line) !important;
+}
+
+/* Pills: solid, uppercase, bold */
+.tag-pill {
+  font-weight: 900 !important;
+  text-transform: uppercase;
+  border: 2.5px solid var(--bold-line);
+  letter-spacing: 0.04em;
+}
+
+/* Accent colours back on for the bold style */
+.unit-mini-card .unit-num,
+.vocab-card .tag-pill,
+.subtopic-card .tag-pill,
+.pf-stat .tag-pill,
+.wotd-window .tag-pill,
+.read-first .tag-pill,
+.page-top-banner .tag-pill {
+  background: var(--bold-lime) !important;
+  color: #111 !important;
+}
+.exam-group-head .tag-pill.bg-sky { background: var(--bold-purple) !important; color: #111 !important; }
+.exam-group-head .tag-pill.bg-coral { background: var(--bold-orange) !important; color: #111 !important; }
+
+.brutal-btn.bg-sky,
+.brutal-btn-sm.bg-sky { background: var(--bold-purple) !important; color: #111 !important; }
+.brutal-btn.bg-mint,
+.brutal-btn-sm.bg-mint { background: var(--bold-lime) !important; color: #111 !important; }
+.brutal-btn.bg-coral,
+.brutal-btn-sm.bg-coral { background: var(--bold-orange) !important; color: #111 !important; }
+.brutal-btn.bg-yellow { background: var(--bold-lime) !important; color: #111 !important; }
+
+/* Title bars get colour again, like the reference */
+.wotd-window .os-titlebar,
+.quiz-window .os-titlebar,
+.unit-workspace-window .os-titlebar {
+  background: var(--bold-purple) !important;
+  color: #111 !important;
+  border-bottom: 3px solid var(--bold-line);
+}
+
+/* Navigation: heavier active state */
+.nav-tab.active,
+.dock-btn.active {
+  border: 3px solid var(--bold-line) !important;
+  box-shadow: 4px 4px 0 var(--bold-line);
+  font-weight: 900;
+}
+
+/* Grid cards line up cleanly */
+.units-overview-grid { gap: 18px; }
+
+/* Mobile: keep the bold lines but a little lighter so text stays easy to read */
+@media (max-width: 599px) {
+  .os-window,
+  .vocab-card,
+  .unit-mini-card,
+  .pf-panel,
+  .pf-stat { box-shadow: 4px 4px 0 var(--bold-line) !important; border-width: 2.5px !important; }
+  h1, h2, .page-headline { letter-spacing: -0.025em; }
+}
+
+/* ==========================================================================
+   BOLD DECORATIONS: solid colours, thicker lines and a slow spin.
+   Positions and sizes come from style.css.
+   ========================================================================== */
+.deco svg path,
+.deco svg polyline,
+.deco svg circle {
+  stroke: var(--bold-line);
+  stroke-width: 3.5;
+}
+.deco-star svg path { fill: var(--bold-purple); }
+.deco-star-login svg path { fill: var(--bold-lime); }
+.deco-dots svg circle:first-child { fill: var(--bold-lime); }
+.deco-dots svg .fill-dots { fill: var(--bold-pink); }
+.deco-dots svg circle:last-child { fill: var(--bold-line); }
+
+.deco-star-hero { animation: boldSpin 9s linear infinite; }
+@keyframes boldSpin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .deco-star-hero { animation: none; } }

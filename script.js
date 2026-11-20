@@ -2,6 +2,24 @@
    BEYOND BASIC — Colorful Neo-Brutalist & Scannable English Lab (Group 11)
    ========================================================================== */
 
+// Calm (default) or bold visual style, remembered on this device
+function setupStyleToggle() {
+  const link = document.getElementById("boldStyles");
+  const btn = document.getElementById("styleToggle");
+  if (!link || !btn) return;
+  const isBold = localStorage.getItem("bb_style") === "bold";
+  link.disabled = !isBold;
+  btn.textContent = isBold ? "CALM" : "BOLD";
+  document.body.classList.toggle("bold-on", isBold);
+  btn.addEventListener("click", () => {
+    const nowBold = link.disabled;
+    link.disabled = !nowBold;
+    localStorage.setItem("bb_style", nowBold ? "bold" : "calm");
+    btn.textContent = nowBold ? "CALM" : "BOLD";
+    document.body.classList.toggle("bold-on", nowBold);
+  });
+}
+
 // Restart a short CSS animation class on an element
 function playAnim(el, cls) {
   if (!el) return;
@@ -3062,6 +3080,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   safeInit("quiz", () => { renderQuizQuestion(); setupQuizControls(); });
   safeInit("modal", () => setupModalControls());
   safeInit("scroll reveal", () => refreshScrollReveal());
+  safeInit("style", () => setupStyleToggle());
   safeInit("progress", () => updateProgressStats());
 });
 

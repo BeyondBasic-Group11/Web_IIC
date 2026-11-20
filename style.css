@@ -2594,3 +2594,59 @@ body { letter-spacing: 0.005em; }
   .unit-mini-card,
   .vocab-card { padding: 14px; }
 }
+
+/* ==========================================================================
+   DECORATIONS (both styles): soft tints in CALM, solid colours in BOLD
+   ========================================================================== */
+:root {
+  --deco-a: #dcd2ff;   /* lavender */
+  --deco-b: #dff3c4;   /* soft lime */
+  --deco-c: #ffe0ea;   /* soft pink */
+  --deco-line: #9a9a9a;
+}
+:root[data-theme="dark"] {
+  --deco-a: #3d3360;
+  --deco-b: #2f4020;
+  --deco-c: #4a2a36;
+  --deco-line: #6a6a6a;
+}
+
+.hero-layout,
+.auth-layout { position: relative; }
+
+.deco {
+  display: block;
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.9;
+}
+.deco svg { width: 100%; height: 100%; overflow: visible; }
+.deco svg path,
+.deco svg polyline,
+.deco svg circle {
+  fill: none;
+  stroke: var(--deco-line);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+.deco-star svg path { fill: var(--deco-a); }
+.deco-star-login svg path { fill: var(--deco-b); }
+.deco-dots svg circle:first-child { fill: var(--deco-b); }
+.deco-dots svg .fill-dots { fill: var(--deco-c); }
+.deco-dots svg circle:last-child { fill: var(--deco-line); stroke: none; }
+
+.deco-star-hero  { width: 64px; height: 64px; top: -20px; right: 6%; }
+.deco-dots-hero  { width: 90px; height: 90px; bottom: 6%; left: 2%; }
+.deco-zig-hero   { width: 140px; height: 36px; bottom: -8px; right: 14%; }
+.deco-star-login { width: 50px; height: 50px; top: -16px; right: 8%; }
+.deco-dots-login { width: 76px; height: 76px; bottom: 8%; left: -4%; }
+
+@media (max-width: 599px) {
+  .deco-star-hero  { width: 44px; height: 44px; top: -12px; right: 4%; }
+  .deco-dots-hero  { width: 60px; height: 60px; }
+  .deco-zig-hero   { width: 100px; right: 6%; }
+  .deco-star-login { width: 36px; height: 36px; }
+  .deco-dots-login { width: 54px; height: 54px; }
+}
