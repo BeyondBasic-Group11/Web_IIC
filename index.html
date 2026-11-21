@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=26" />
+  <link rel="stylesheet" href="style.css?v=27" />
   <link rel="stylesheet" href="style-bold.css?v=8" id="boldStyles" />
 </head>
 <body class="logged-out">
@@ -37,6 +37,7 @@
         <button class="nav-tab" data-nav="units">UNITS</button>
         <button class="nav-tab" data-nav="idioms">IDIOMS</button>
         <button class="nav-tab" data-nav="stories">STORIES</button>
+        <button class="nav-tab" data-nav="tips">TIPS</button>
         <button class="nav-tab" data-nav="quiz">QUIZ</button>
       </nav>
 
@@ -633,6 +634,58 @@
         </div>
       </div>
     </section>
+    <section id="page-tips" class="page" aria-labelledby="tips-heading">
+      <div class="page-top-banner">
+        <div>
+          <span class="tag-pill bg-yellow">SPEAKING</span>
+          <h1 id="tips-heading" class="page-headline">TIPS FOR SPEAKING</h1>
+          <p class="page-lead">Small habits that help you speak English more confidently. Start with one tip this week.</p>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <article class="os-window tip-card">
+          <span class="tag-pill bg-mint">01</span>
+          <h2 class="tip-title">Speak every day, even for 10 minutes</h2>
+          <p class="tip-body">Consistency matters more than length. Pick one topic each day and talk about it out loud for 10 minutes, alone or with a friend.</p>
+        </article>
+        <article class="os-window tip-card">
+          <span class="tag-pill bg-mint">02</span>
+          <h2 class="tip-title">Learn phrases, not single words</h2>
+          <p class="tip-body">Memorize chunks like 'I see your point, although...' or 'Would you mind...?'. They come out faster in real conversation than isolated vocabulary.</p>
+        </article>
+        <article class="os-window tip-card">
+          <span class="tag-pill bg-mint">03</span>
+          <h2 class="tip-title">Shadow a native speaker</h2>
+          <p class="tip-body">Play a short clip, then repeat it right after the speaker, copying rhythm, stress, and intonation. Stop and replay whenever you lose the pace.</p>
+        </article>
+        <article class="os-window tip-card">
+          <span class="tag-pill bg-mint">04</span>
+          <h2 class="tip-title">Record yourself and listen back</h2>
+          <p class="tip-body">Use your phone to record a 1-minute answer. Listen once for pronunciation and once for grammar. Most people notice their habits this way for the first time.</p>
+        </article>
+        <article class="os-window tip-card">
+          <span class="tag-pill bg-mint">05</span>
+          <h2 class="tip-title">Think in English for a few minutes</h2>
+          <p class="tip-body">Describe your room, your meal, or your plans in English in your head. This builds the habit of thinking in English before you need to speak.</p>
+        </article>
+        <article class="os-window tip-card">
+          <span class="tag-pill bg-mint">06</span>
+          <h2 class="tip-title">Use fillers and bridge phrases</h2>
+          <p class="tip-body">Words like 'Well,' 'Actually,' or 'Let me think...' buy you time. Silence feels longer to you than it does to the listener.</p>
+        </article>
+        <article class="os-window tip-card">
+          <span class="tag-pill bg-mint">07</span>
+          <h2 class="tip-title">Ask when you do not understand</h2>
+          <p class="tip-body">'Could you say that again?' and 'Do you mean...?' are normal in English conversation. Asking keeps the talk going instead of stopping it.</p>
+        </article>
+        <article class="os-window tip-card">
+          <span class="tag-pill bg-mint">08</span>
+          <h2 class="tip-title">Focus on being understood, not perfect</h2>
+          <p class="tip-body">Clear stress on key words matters more than perfect grammar. Slow down a little, and pause between ideas so the listener can follow.</p>
+        </article>
+      </div>
+    </section>
+
     <section id="page-profile" class="page" aria-labelledby="profile-heading">
       <div class="page-top-banner">
         <div>
@@ -673,6 +726,7 @@
     <button class="dock-btn" data-nav="stories">
       <span class="dock-txt">STORY</span>
     </button>
+    <button class="dock-btn" data-nav="tips">TIPS</button>
     <button class="dock-btn" data-nav="quiz">
       <span class="dock-txt">QUIZ</span>
     </button>
@@ -712,6 +766,6 @@
   <div id="toast" class="brutal-toast" role="status" aria-live="polite"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js?v=27"></script>
+  <script src="script.js?v=29"></script>
 </body>
 </html>
