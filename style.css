@@ -2735,3 +2735,8 @@ body { letter-spacing: 0.005em; }
 /* The bottom menu now has seven buttons */
 .mobile-dock { grid-template-columns: repeat(7, minmax(0, 1fr)); }
 .dock-btn { font-size: 0.7rem; padding-left: 2px; padding-right: 2px; }
+
+/* Word spotlight: keep its natural height on every screen, no empty gap above the comparison box */
+#page-home .wotd-window { align-self: start; min-height: 0 !important; }
+.wotd-window .upgrade-box { margin-top: 18px; }
+
