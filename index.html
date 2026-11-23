@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=27" />
+  <link rel="stylesheet" href="style.css?v=32" />
   <link rel="stylesheet" href="style-bold.css?v=8" id="boldStyles" />
 </head>
 <body class="logged-out">
@@ -36,7 +36,7 @@
         <button class="nav-tab" data-nav="words">WORDS</button>
         <button class="nav-tab" data-nav="units">UNITS</button>
         <button class="nav-tab" data-nav="idioms">IDIOMS</button>
-        <button class="nav-tab" data-nav="stories">STORIES</button>
+        <button class="nav-tab" data-nav="ai">AI</button>
         <button class="nav-tab" data-nav="tips">TIPS</button>
         <button class="nav-tab" data-nav="quiz">QUIZ</button>
       </nav>
@@ -169,6 +169,7 @@
             </div>
             <h2 id="spotlightWord" class="wotd-display">PETRICHOR</h2>
             <p id="spotlightDef" class="wotd-definition"></p>
+            <p id="spotlightExample" class="wotd-example"></p>
             <div class="upgrade-box">
               <div id="spotlightOld" class="upgrade-old"></div>
               <div id="spotlightNew" class="upgrade-new"></div>
@@ -502,65 +503,6 @@
     </section>
 
     <!-- ==================== PAGE 04: SHORT STORIES ==================== -->
-    <section id="page-stories" class="page" aria-labelledby="stories-heading">
-      <div class="page-top-banner">
-        <div>
-          <span class="tag-pill bg-lilac">CONTEXT READING</span>
-          <h1 id="stories-heading" class="page-headline">SHORT STORIES</h1>
-        </div>
-        <p class="banner-note">
-          Tap any <span class="demo-chip bg-yellow">COLORED WORD</span> to see its meaning, origin, and audio.
-        </p>
-      </div>
-
-      <div class="story-tabs" id="storyTabs" role="tablist"></div>
-
-      <article class="os-window story-window">
-        <div class="os-titlebar bg-lilac">
-          <div class="os-dots"><span></span><span></span><span></span></div>
-          <span id="storyWindowFile" class="os-title">STORY 01</span>
-          <span id="storyReadTime" class="os-title">1 MIN READ</span>
-        </div>
-
-        <div class="os-body story-content-pad">
-          <div class="story-controls-bar">
-            <span id="storyTag" class="tag-pill bg-yellow">TRAVEL</span>
-            <div class="story-btn-group">
-              <button id="fontDecreaseBtn" class="brutal-btn-sm" title="Smaller Text">A-</button>
-              <button id="fontIncreaseBtn" class="brutal-btn-sm" title="Larger Text">A+</button>
-              <button id="readStoryAloudBtn" class="brutal-btn-sm bg-sky">
-                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                READ ALOUD
-              </button>
-            </div>
-          </div>
-
-          <h2 id="storyTitle" class="story-headline"></h2>
-          <p id="storyAuthor" class="story-byline"></p>
-
-          <div id="storyBody" class="story-paragraphs"></div>
-
-          <div class="reflection-panel" style="margin-top: 22px;">
-            <div class="practice-header-row">
-              <strong class="inline-icon-label">
-                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9"></path><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path></svg>
-                TRY IT:
-              </strong>
-              <span id="storyPrompt" class="prompt-inline"></span>
-            </div>
-            <div class="inline-practice-row">
-              <input
-                type="text"
-                id="reflectionInput"
-                placeholder="Write 1 sentence using a highlighted word..."
-              />
-              <button id="saveReflectionBtn" class="brutal-btn-sm bg-mint">SAVE</button>
-            </div>
-            <span id="reflectionSavedMsg" class="saved-status"></span>
-          </div>
-        </div>
-      </article>
-    </section>
 
     <!-- ==================== PAGE 05: QUIZ ==================== -->
     <section id="page-quiz" class="page" aria-labelledby="quiz-heading">
@@ -684,6 +626,49 @@
           <p class="tip-body">Clear stress on key words matters more than perfect grammar. Slow down a little, and pause between ideas so the listener can follow.</p>
         </article>
       </div>
+      <div class="tips-next">
+        <button class="brutal-btn bg-sky" type="button" data-nav="ai">READ MY AI EXPERIENCE →</button>
+      </div>
+    </section>
+
+    <section id="page-ai" class="page" aria-labelledby="ai-heading">
+      <div class="page-top-banner">
+        <div>
+          <span class="tag-pill bg-sky">AI TOOLS</span>
+          <h1 id="ai-heading" class="page-headline">My Experience with AI Apps</h1>
+          <p class="page-lead">Notes after two weeks of practice with three apps.</p>
+        </div>
+      </div>
+      <div class="tips-grid">
+        <article class="os-window tip-card ai-app-card">
+          <span class="tag-pill bg-sky">SMALLTALK2ME</span>
+          <p class="ai-line"><strong>Used for:</strong> Speaking tests and structured practice.</p>
+          <p class="tip-body">I recorded my answers and the app gave feedback on pronunciation, fluency, grammar and vocabulary. The job interview and IELTS-style practice made me feel ready for real tests.</p>
+          <p class="ai-line"><strong>Good:</strong> Clear feedback after every answer, plus a level test.</p>
+          <p class="ai-line"><strong>Watch out:</strong> Some features need a paid plan, so check what is free.</p>
+          <p class="ai-line"><strong>Best for:</strong> Tests and interviews.</p>
+        </article>
+        <article class="os-window tip-card ai-app-card">
+          <span class="tag-pill bg-mint">CHATGPT</span>
+          <p class="ai-line"><strong>Used for:</strong> Free conversation and role-play.</p>
+          <p class="tip-body">I asked it to act as a waiter, a teacher and an interviewer. With voice mode I could talk about any topic, and it explained my mistakes in simple words.</p>
+          <p class="ai-line"><strong>Good:</strong> Any topic, any level, detailed corrections.</p>
+          <p class="ai-line"><strong>Watch out:</strong> It can be too polite, so ask it to correct every mistake.</p>
+          <p class="ai-line"><strong>Best for:</strong> Flexible conversation.</p>
+        </article>
+        <article class="os-window tip-card ai-app-card">
+          <span class="tag-pill bg-lilac">PI (PI.AI)</span>
+          <p class="ai-line"><strong>Used for:</strong> Friendly everyday chat.</p>
+          <p class="tip-body">Pi feels like talking to a kind friend. It asks short questions and listens, so I relaxed and spoke longer. I chose a voice I liked and chatted while walking.</p>
+          <p class="ai-line"><strong>Good:</strong> Warm, natural, low pressure.</p>
+          <p class="ai-line"><strong>Watch out:</strong> It corrects grammar less than the others, so ask for corrections.</p>
+          <p class="ai-line"><strong>Best for:</strong> Confidence and small talk.</p>
+        </article>
+        </div>
+        <article class="os-window tip-card ai-summary">
+          <span class="tag-pill bg-yellow">WHAT I LEARNED</span>
+          <p class="tip-body">Each app has a different job. Smalltalk2Me tests me, ChatGPT teaches me, and Pi helps me relax and keep talking. The progress came from speaking out loud every day.</p>
+        </article>
     </section>
 
     <section id="page-profile" class="page" aria-labelledby="profile-heading">
@@ -723,9 +708,7 @@
     <button class="dock-btn" data-nav="idioms">
       <span class="dock-txt">IDIOMS</span>
     </button>
-    <button class="dock-btn" data-nav="stories">
-      <span class="dock-txt">STORY</span>
-    </button>
+    <button class="dock-btn" data-nav="ai">AI</button>
     <button class="dock-btn" data-nav="tips">TIPS</button>
     <button class="dock-btn" data-nav="quiz">
       <span class="dock-txt">QUIZ</span>
@@ -766,6 +749,6 @@
   <div id="toast" class="brutal-toast" role="status" aria-live="polite"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js?v=29"></script>
+  <script src="script.js?v=30"></script>
 </body>
 </html>

@@ -3141,7 +3141,6 @@ document.addEventListener("DOMContentLoaded", async () => {
   safeInit("words", () => { renderVocabGrid(); setupVocabFilters(); });
   safeInit("units", () => { renderUnitsLab(); setupUnitControls(); });
   safeInit("idioms", () => { renderIdiomsAndUpgrades(); setupIdiomFilters(); });
-  safeInit("stories", () => { renderStories(); setupStoryControls(); });
   safeInit("quiz", () => { renderQuizQuestion(); setupQuizControls(); });
   safeInit("modal", () => setupModalControls());
   safeInit("scroll reveal", () => refreshScrollReveal());
@@ -3251,6 +3250,7 @@ function renderSpotlightWord() {
   document.getElementById("spotlightIpa").textContent = item.ipa;
   document.getElementById("spotlightWord").textContent = item.word.toUpperCase();
   document.getElementById("spotlightDef").textContent = item.definition;
+  document.getElementById("spotlightExample").textContent = `"${item.example}"`;
   playAnim(document.getElementById("spotlightWord"), "slide-in");
   document.getElementById("spotlightOld").innerHTML = `${ICONS.cross} <span>BASIC: "${item.basicAlt}"</span>`;
   document.getElementById("spotlightNew").innerHTML = `${ICONS.check} <span>UPGRADE: "${item.example}"</span>`;
@@ -3305,7 +3305,6 @@ function navigateTo(pageId) {
   });
 
   if (pageId === "profile") renderProfile();
-  if (pageId === "stories") markStoryRead(STORIES_DATA[state.activeStoryIndex].id);
   window.scrollTo({ top: 0, behavior: "smooth" });
   refreshScrollReveal();
 }
@@ -3361,7 +3360,45 @@ function findVoice(lang) {
   );
 }
 
+// Prepared audio (audio/<word>.mp3) gives the same voice on every device.
+// If a file is missing or cannot play, the device voice is used instead.
+const AUDIO_DIR = "audio/";
+let currentAudio = null;
+
+function audioSlug(text) {
+  return text.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 80);
+}
+
 function speakText(text, onEndCallback = null) {
+  const slug = audioSlug(text);
+  if (!slug || typeof Audio === "undefined") {
+    speakWithSystemVoice(text, onEndCallback);
+    return;
+  }
+  stopAudioFile();
+  const audio = new Audio(`${AUDIO_DIR}${slug}.mp3`);
+  currentAudio = audio;
+  const fallback = () => {
+    if (currentAudio === audio) currentAudio = null;
+    speakWithSystemVoice(text, onEndCallback);
+  };
+  audio.onended = () => {
+    if (currentAudio === audio) currentAudio = null;
+    if (onEndCallback) onEndCallback();
+  };
+  audio.onerror = fallback;
+  const playing = audio.play();
+  if (playing && typeof playing.catch === "function") playing.catch(fallback);
+}
+
+function stopAudioFile() {
+  if (currentAudio) {
+    currentAudio.pause();
+    currentAudio = null;
+  }
+}
+
+function speakWithSystemVoice(text, onEndCallback = null) {
   if (!("speechSynthesis" in window)) {
     showToast("AUDIO NOT SUPPORTED");
     return;
@@ -3382,6 +3419,7 @@ function speakText(text, onEndCallback = null) {
 }
 
 function stopSpeech() {
+  stopAudioFile();
   if ("speechSynthesis" in window) window.speechSynthesis.cancel();
   state.isReadingStory = false;
   const readBtn = document.getElementById("readStoryAloudBtn");
@@ -4573,7 +4611,6 @@ function renderProfile() {
 
   const progressBars = buildProgressBars([
     ["UNITS PRACTICED", `${p.practiced.length}/${UNITS_DATA.length}`, UNITS_DATA.length, Math.round((p.practiced.length / UNITS_DATA.length) * 100), "var(--chart-1)"],
-    ["STORIES READ", `${p.storiesRead.length}/${STORIES_DATA.length}`, STORIES_DATA.length, Math.round((p.storiesRead.length / STORIES_DATA.length) * 100), "var(--chart-2)"],
     ["VOCABULARY MASTERED", `${masteredWords}/${VOCAB_DATA.length}`, VOCAB_DATA.length, wordPct, "var(--chart-3)"],
     ["QUIZ AVERAGE", avg === null ? "-" : `${avg}%`, 100, avg === null ? 0 : avg, "var(--chart-4)"],
   ]);
@@ -4607,7 +4644,6 @@ function renderProfile() {
       ${statCard("QUIZ AVERAGE", avg === null ? "-" : `${avg}%`, "bg-yellow")}
       ${statCard("QUIZ ATTEMPTS", p.quizResults.length, "bg-sky")}
       ${statCard("UNITS PRACTICED", `${p.practiced.length}/${UNITS_DATA.length}`, "bg-coral")}
-      ${statCard("STORIES READ", `${p.storiesRead.length}/${STORIES_DATA.length}`, "bg-lilac")}
       ${statCard("DAY STREAK", streak, "bg-peach")}
     </div>
 

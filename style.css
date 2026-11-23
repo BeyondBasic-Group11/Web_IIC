@@ -2736,7 +2736,47 @@ body { letter-spacing: 0.005em; }
 .mobile-dock { grid-template-columns: repeat(7, minmax(0, 1fr)); }
 .dock-btn { font-size: 0.7rem; padding-left: 2px; padding-right: 2px; }
 
-/* Word spotlight: keep its natural height on every screen, no empty gap above the comparison box */
-#page-home .wotd-window { align-self: start; min-height: 0 !important; }
-.wotd-window .upgrade-box { margin-top: 18px; }
+/* Word spotlight: on laptops it matches the hero card height; the example sentence fills the middle */
+#page-home .wotd-window { align-self: stretch; }
+.wotd-example {
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.55;
+  color: var(--ink-muted);
+  margin: 14px 0 0;
+}
 
+/* On phones the card keeps its natural height, so there is no gap */
+@media (max-width: 899px) {
+  #page-home .wotd-window { align-self: start; min-height: 0 !important; }
+  .wotd-window .upgrade-box { margin-top: 18px; }
+}
+
+
+/* ==================== MY EXPERIENCE WITH AI APPS ==================== */
+.ai-experience { margin-top: 40px; }
+
+.ai-heading {
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.ai-app-card .tag-pill { font-weight: 800; }
+
+.ai-line {
+  font-size: 0.95rem;
+  line-height: 1.55;
+  margin: 0;
+}
+
+.ai-summary { margin-top: 20px; }
+.ai-summary .tag-pill { align-self: flex-start; }
+
+/* Home hero: stacked (hero full width, spotlight below) on narrower screens,
+   side by side on wide laptops. Breakpoint is 1100px. */
+@media (max-width: 1099px) {
+  #page-home .hero-layout { grid-template-columns: 1fr; }
+  #page-home .wotd-window { align-self: start; min-height: 0 !important; }
+  .wotd-window .upgrade-box { margin-top: 18px; }
+}
