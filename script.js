@@ -4274,8 +4274,6 @@ function showToast(message) {
 // ==========================================================================
 const SUPABASE_URL = "https://pbvlcjlgxbxpxmzzcigf.supabase.co";
 const SUPABASE_KEY = "sb_publishable_uV4Wc5Pe2IJdGvlxJZCwBg_4iIsLspV";
-// Set to true only after the Google provider is enabled in Supabase (Authentication > Providers > Google)
-const GOOGLE_LOGIN_ENABLED = false;
 const sb = window.supabase ? window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY) : null;
 
 let authUser = null;     // Supabase auth user (id, email)
@@ -4694,23 +4692,6 @@ function renderProfile() {
 
 function setupProfile() {
   document.getElementById("loginForm").addEventListener("submit", handleLoginSubmit);
-  if (!GOOGLE_LOGIN_ENABLED) {
-    document.getElementById("googleLoginBtn").style.display = "none";
-    document.getElementById("loginDivider").style.display = "none";
-  }
-  document.getElementById("googleLoginBtn").addEventListener("click", async () => {
-    const err = document.getElementById("loginError");
-    if (!sb) {
-      err.textContent = "Could not connect to the sign-in service.";
-      return;
-    }
-    err.textContent = "";
-    const { error } = await sb.auth.signInWithOAuth({
-      provider: "google",
-      options: { redirectTo: window.location.origin + window.location.pathname },
-    });
-    if (error) err.textContent = error.message;
-  });
 
   document.getElementById("avatarInput").addEventListener("change", (e) => {
     const file = e.target.files && e.target.files[0];

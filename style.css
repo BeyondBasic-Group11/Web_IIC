@@ -2780,3 +2780,31 @@ body { letter-spacing: 0.005em; }
   #page-home .wotd-window { align-self: start; min-height: 0 !important; }
   .wotd-window .upgrade-box { margin-top: 18px; }
 }
+
+/* Hero card on wide screens: headline and text on the left, buttons and stats on the right */
+@media (min-width: 1100px) {
+  #page-home .poster-block {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    column-gap: 40px;
+    align-items: start;
+  }
+  #page-home .poster-block > .poster-meta-top,
+  #page-home .poster-block > .mega-headline,
+  #page-home .poster-block > .hero-kicker,
+  #page-home .poster-block > .poster-lead { grid-column: 1; }
+  #page-home .poster-block > .hero-actions,
+  #page-home .poster-block > .tech-strip { grid-column: 2; }
+  #page-home .poster-block > .hero-actions { margin-top: 56px; }
+  #page-home .poster-block > .tech-strip { margin-top: 0; }
+}
+
+/* Unit subtopics: when the last card is alone on its row (3 subtopics, 2 columns),
+   centre it instead of leaving an empty gap on the right. */
+@media (min-width: 840px) {
+  .unit-subtopics-grid > :last-child:nth-child(odd):not(:first-child) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: calc(50% - 8px);
+  }
+}
