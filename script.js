@@ -2168,6 +2168,214 @@ const IDIOMS_DATA = [
     "category": "Emotion & Mind",
     "meaning": "Stay positive and cheerful during a difficult time.",
     "example": "Keep your chin up, the results will come soon."
+  },
+  {
+    "idiom": "A storm in a teacup",
+    "tag": "WEATHER",
+    "color": "bg-sky",
+    "category": "Nature & Atmosphere",
+    "meaning": "A lot of worry about something unimportant.",
+    "example": "The argument over the parking spot was a storm in a teacup."
+  },
+  {
+    "idiom": "Make hay while the sun shines",
+    "tag": "OPPORTUNITY",
+    "color": "bg-mint",
+    "category": "Nature & Atmosphere",
+    "meaning": "Use a good opportunity while it lasts.",
+    "example": "The sun is out, so we should make hay while the sun shines and finish the report now."
+  },
+  {
+    "idiom": "Come rain or shine",
+    "tag": "ALWAYS",
+    "color": "bg-yellow",
+    "category": "Nature & Atmosphere",
+    "meaning": "Regardless of the situation, no matter what happens.",
+    "example": "Our study group meets every Friday, come rain or shine."
+  },
+  {
+    "idiom": "The calm before the storm",
+    "tag": "QUIET",
+    "color": "bg-lilac",
+    "category": "Nature & Atmosphere",
+    "meaning": "A quiet period before a difficult or busy time.",
+    "example": "The office was quiet, the calm before the storm of the exam week."
+  },
+  {
+    "idiom": "Out of the blue",
+    "tag": "SURPRISE",
+    "color": "bg-peach",
+    "category": "Nature & Atmosphere",
+    "meaning": "Suddenly and unexpectedly.",
+    "example": "She called me out of the blue after five years."
+  },
+  {
+    "idiom": "Head in the clouds",
+    "tag": "DREAMY",
+    "color": "bg-coral",
+    "category": "Nature & Atmosphere",
+    "meaning": "Not paying attention to practical things, daydreaming.",
+    "example": "He has his head in the clouds and forgot the deadline again."
+  },
+  {
+    "idiom": "Go with the flow",
+    "tag": "RELAX",
+    "color": "bg-mint",
+    "category": "Nature & Atmosphere",
+    "meaning": "Relax and accept what happens, without fighting it.",
+    "example": "Our plan changed twice, but we just went with the flow."
+  },
+  {
+    "idiom": "The snowball effect",
+    "tag": "GROWTH",
+    "color": "bg-sky",
+    "category": "Nature & Atmosphere",
+    "meaning": "A small thing that grows bigger and bigger over time.",
+    "example": "One small idea led to a snowball effect of new projects."
+  },
+  {
+    "idiom": "Over the moon",
+    "tag": "HAPPY",
+    "color": "bg-yellow",
+    "category": "Emotion & Mind",
+    "meaning": "Extremely happy and pleased.",
+    "example": "She was over the moon when she passed the exam."
+  },
+  {
+    "idiom": "Down in the dumps",
+    "tag": "SAD",
+    "color": "bg-lilac",
+    "category": "Emotion & Mind",
+    "meaning": "Feeling sad or unhappy.",
+    "example": "He has been down in the dumps since his team lost."
+  },
+  {
+    "idiom": "Hold your horses",
+    "tag": "PATIENCE",
+    "color": "bg-peach",
+    "category": "Emotion & Mind",
+    "meaning": "Wait a moment, do not rush.",
+    "example": "Hold your horses, I have not finished my sentence yet."
+  },
+  {
+    "idiom": "Lose your temper",
+    "tag": "ANGER",
+    "color": "bg-coral",
+    "category": "Emotion & Mind",
+    "meaning": "Suddenly become very angry.",
+    "example": "He lost his temper when the printer broke again."
+  },
+  {
+    "idiom": "Get cold feet",
+    "tag": "NERVOUS",
+    "color": "bg-sky",
+    "category": "Emotion & Mind",
+    "meaning": "Suddenly become too nervous to do something you planned.",
+    "example": "I wanted to present, but I got cold feet at the last minute."
+  },
+  {
+    "idiom": "Feel blue",
+    "tag": "SAD",
+    "color": "bg-mint",
+    "category": "Emotion & Mind",
+    "meaning": "Feel sad or depressed for a while.",
+    "example": "She felt blue after the long rainy week."
+  },
+  {
+    "idiom": "Hit the nail on the head",
+    "tag": "ACCURATE",
+    "color": "bg-sky",
+    "category": "Character & Style",
+    "meaning": "Say or do exactly the right thing.",
+    "example": "You hit the nail on the head with that comment."
+  },
+  {
+    "idiom": "Beat around the bush",
+    "tag": "DIRECT",
+    "color": "bg-coral",
+    "category": "Character & Style",
+    "meaning": "Avoid talking about the main point directly.",
+    "example": "Stop beating around the bush and tell me what happened."
+  },
+  {
+    "idiom": "Bite off more than you can chew",
+    "tag": "BUSY",
+    "color": "bg-peach",
+    "category": "Character & Style",
+    "meaning": "Take on more work than you can manage.",
+    "example": "I bit off more than I could chew with three projects."
+  },
+  {
+    "idiom": "Cut corners",
+    "tag": "CARELESS",
+    "color": "bg-lilac",
+    "category": "Character & Style",
+    "meaning": "Do something cheaply or carelessly to save time or money.",
+    "example": "The team cut corners and the slides looked messy."
+  },
+  {
+    "idiom": "Keep an open mind",
+    "tag": "OPEN",
+    "color": "bg-mint",
+    "category": "Character & Style",
+    "meaning": "Be willing to consider new ideas.",
+    "example": "Keep an open mind when you hear a different opinion."
+  },
+  {
+    "idiom": "Show your true colors",
+    "tag": "HONEST",
+    "color": "bg-yellow",
+    "category": "Character & Style",
+    "meaning": "Reveal your real character or opinion.",
+    "example": "Under pressure, he showed his true colors and helped everyone."
+  },
+  {
+    "idiom": "Time flies",
+    "tag": "FAST",
+    "color": "bg-yellow",
+    "category": "Time & Society",
+    "meaning": "Time passes very quickly.",
+    "example": "Time flies when you are having fun with friends."
+  },
+  {
+    "idiom": "Better late than never",
+    "tag": "LATE",
+    "color": "bg-lilac",
+    "category": "Time & Society",
+    "meaning": "Doing something late is better than not doing it at all.",
+    "example": "I sent my thank-you note a week late, but better late than never."
+  },
+  {
+    "idiom": "At the eleventh hour",
+    "tag": "DEADLINE",
+    "color": "bg-coral",
+    "category": "Time & Society",
+    "meaning": "At the very last possible moment.",
+    "example": "She submitted the essay at the eleventh hour."
+  },
+  {
+    "idiom": "Take your time",
+    "tag": "PATIENCE",
+    "color": "bg-sky",
+    "category": "Time & Society",
+    "meaning": "Do not hurry, there is no rush.",
+    "example": "Take your time reading the instructions."
+  },
+  {
+    "idiom": "Get the ball rolling",
+    "tag": "START",
+    "color": "bg-mint",
+    "category": "Time & Society",
+    "meaning": "Start an activity or process.",
+    "example": "Let us get the ball rolling with the first slide."
+  },
+  {
+    "idiom": "Hit the road",
+    "tag": "LEAVE",
+    "color": "bg-peach",
+    "category": "Time & Society",
+    "meaning": "Start a journey or leave.",
+    "example": "We should hit the road before the traffic gets worse."
   }
 ];
 

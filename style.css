@@ -2795,3 +2795,16 @@ body { letter-spacing: 0.005em; }
     width: calc(50% - 8px);
   }
 }
+
+/* Word Spotlight: larger text so the card reads well and fills its space */
+#page-home .wotd-display,
+.wotd-display { font-size: clamp(2.1rem, 4.2vw, 3.1rem); line-height: 1.05; }
+.wotd-definition { font-size: 1.2rem; line-height: 1.5; }
+.wotd-example { font-size: 1.12rem; line-height: 1.55; }
+.wotd-window .upgrade-box { font-size: 1.05rem; line-height: 1.5; }
+.wotd-window .tag-pill { font-size: 0.8rem; }
+@media (max-width: 599px) {
+  .wotd-display { font-size: clamp(2rem, 9vw, 2.6rem); }
+  .wotd-definition { font-size: 1.05rem; }
+  .wotd-example { font-size: 1rem; }
+}
