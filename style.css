@@ -2773,32 +2773,18 @@ body { letter-spacing: 0.005em; }
 .ai-summary { margin-top: 20px; }
 .ai-summary .tag-pill { align-self: flex-start; }
 
-/* Home hero: stacked (hero full width, spotlight below) on narrower screens,
-   side by side on wide laptops. Breakpoint is 1100px. */
-@media (max-width: 1099px) {
+/* Home hero: hero on the left and Word Spotlight on the right from 900px wide;
+   stacked (hero first, spotlight below) on phones. */
+@media (min-width: 900px) {
+  #page-home .hero-layout { grid-template-columns: 1.15fr 1fr; }
+  #page-home .wotd-window { align-self: stretch; }
+}
+@media (max-width: 899px) {
   #page-home .hero-layout { grid-template-columns: 1fr; }
   #page-home .wotd-window { align-self: start; min-height: 0 !important; }
   .wotd-window .upgrade-box { margin-top: 18px; }
 }
 
-/* Hero card content: headline and text on the left, buttons and stats on the right.
-   Starts at 900px so desktop-mode phones and small laptops fill the card too. */
-@media (min-width: 900px) {
-  #page-home .poster-block {
-    display: grid;
-    grid-template-columns: 1.1fr 0.9fr;
-    column-gap: 40px;
-    align-items: start;
-  }
-  #page-home .poster-block > .poster-meta-top,
-  #page-home .poster-block > .mega-headline,
-  #page-home .poster-block > .hero-kicker,
-  #page-home .poster-block > .poster-lead { grid-column: 1; }
-  #page-home .poster-block > .hero-actions,
-  #page-home .poster-block > .tech-strip { grid-column: 2; }
-  #page-home .poster-block > .hero-actions { margin-top: 56px; }
-  #page-home .poster-block > .tech-strip { margin-top: 0; }
-}
 
 /* Unit subtopics: when the last card is alone on its row (3 subtopics, 2 columns),
    centre it instead of leaving an empty gap on the right. */
