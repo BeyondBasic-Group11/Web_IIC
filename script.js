@@ -3353,6 +3353,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   safeInit("modal", () => setupModalControls());
   safeInit("scroll reveal", () => refreshScrollReveal());
   safeInit("style", () => setupStyleToggle());
+  safeInit("copy prompt", () => setupCopyPrompt());
   safeInit("progress", () => updateProgressStats());
 });
 
@@ -5031,4 +5032,26 @@ function buildProgressBars(items) {
         <div class="pf-hbar-head"><span>${label}</span><span>${value}</span></div>
         <div class="pf-hbar-track"><div class="pf-hbar-fill" style="width:${pct}%;background:${color}"></div></div>
       </div>`).join("");
+}
+
+
+// Copy the ChatGPT prompt from the AI tutorials
+function setupCopyPrompt() {
+  const btn = document.getElementById("copyPromptBtn");
+  if (!btn) return;
+  btn.addEventListener("click", async () => {
+    const text = document.getElementById("promptText").textContent;
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast("PROMPT COPIED");
+    } catch (e) {
+      const area = document.createElement("textarea");
+      area.value = text;
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+      showToast("PROMPT COPIED");
+    }
+  });
 }

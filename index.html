@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=37" />
+  <link rel="stylesheet" href="style.css?v=39" />
   <link rel="stylesheet" href="style-bold.css?v=8" id="boldStyles" />
 </head>
 <body class="logged-out">
@@ -620,9 +620,6 @@
           <p class="tip-body">Clear stress on key words matters more than perfect grammar. Slow down a little, and pause between ideas so the listener can follow.</p>
         </article>
       </div>
-      <div class="tips-next">
-        <button class="brutal-btn bg-sky" type="button" data-nav="ai">READ MY AI EXPERIENCE →</button>
-      </div>
     </section>
 
     <section id="page-ai" class="page" aria-labelledby="ai-heading">
@@ -663,6 +660,46 @@
           <span class="tag-pill bg-yellow">WHAT I LEARNED</span>
           <p class="tip-body">Each app has a different job. Smalltalk2Me tests me, ChatGPT teaches me, and Pi helps me relax and keep talking. The progress came from speaking out loud every day.</p>
         </article>
+      <div class="ai-tutorials">
+        <h2 class="ai-heading">Tutorials</h2>
+        <div class="tips-grid">
+        <article class="os-window tip-card tutorial-card">
+          <h3 class="tutorial-title">Tutorial 1: Smalltalk2Me (speaking practice with feedback)</h3>
+          <ol class="tutorial-steps">
+            <li>Go to smalltalk2.me in your browser and create a free account.</li>
+            <li>Choose a practice type, such as the level test, a job interview, or an IELTS speaking simulator.</li>
+            <li>Allow the microphone when your browser asks, and sit in a quiet place.</li>
+            <li>Read the question, then press record and answer out loud.</li>
+            <li>Read the feedback on pronunciation, fluency, grammar and vocabulary, then try the same question again.</li>
+          </ol>
+        </article>
+        <article class="os-window tip-card tutorial-card">
+          <h3 class="tutorial-title">Tutorial 2: ChatGPT (conversation and role-play)</h3>
+          <ol class="tutorial-steps">
+            <li>Open chatgpt.com or the ChatGPT app and sign in.</li>
+            <li>Copy the prompt below and paste it into a new chat.</li>
+            <li>Tap the microphone or voice icon to speak, or type your answers.</li>
+            <li>Read each correction, then say the corrected sentence out loud.</li>
+            <li>At the end, ask: "Give me a summary of my five most common mistakes."</li>
+          </ol>
+        </article>
+        <article class="os-window tip-card tutorial-card">
+          <h3 class="tutorial-title">Tutorial 3: Pi (relaxed everyday chat)</h3>
+          <ol class="tutorial-steps">
+            <li>Go to pi.ai or open the Pi app and start a chat.</li>
+            <li>Choose a voice you like in the voice settings and tap the voice or call button.</li>
+            <li>Start simple: "Hi Pi, let's talk about my day."</li>
+            <li>Keep talking for five minutes, even if you make mistakes.</li>
+            <li>Finish by saying: "Please tell me three mistakes I made and how to fix them."</li>
+          </ol>
+        </article>
+        <article class="os-window tip-card tutorial-card">
+          <h3 class="tutorial-title">Prompt to copy (ChatGPT)</h3>
+          <pre class="prompt-text" id="promptText">You are my friendly English speaking partner. My level is intermediate. Talk with me about everyday topics, one short question at a time. After each of my answers, correct my mistakes, show the corrected sentence, and explain the rule in one line. Then ask a follow-up question.</pre>
+          <button type="button" class="brutal-btn-sm bg-sky" id="copyPromptBtn">COPY PROMPT</button>
+        </article>
+        </div>
+      </div>
     </section>
 
     <section id="page-profile" class="page" aria-labelledby="profile-heading">
@@ -743,6 +780,6 @@
   <div id="toast" class="brutal-toast" role="status" aria-live="polite"></div>
 
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="script.js?v=32"></script>
+  <script src="script.js?v=33"></script>
 </body>
 </html>
