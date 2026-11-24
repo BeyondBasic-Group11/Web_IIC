@@ -291,7 +291,7 @@ h1, h2, h3,
   left: -12px;
   width: 30px;
   height: 30px;
-  background: var(--bold-purple);
+  background: #7b5cff;
   border: 2.5px solid var(--bold-line);
   -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 2 L61 34 L94 22 L76 50 L94 78 L61 66 L50 98 L39 66 L6 78 L24 50 L6 22 L39 34 Z' fill='black'/></svg>") no-repeat center / contain;
           mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 2 L61 34 L94 22 L76 50 L94 78 L61 66 L50 98 L39 66 L6 78 L24 50 L6 22 L39 34 Z' fill='black'/></svg>") no-repeat center / contain;
