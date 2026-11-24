@@ -299,23 +299,27 @@ h1, h2, h3,
   z-index: 1;
 }
 
-/* Yellow offset block with an arrow in the footer's bottom-right corner */
-.site-footer::after {
-  content: "";
+/* Orange offset block with an arrow at the hero card's bottom-right corner (like the reference).
+   It sits in the gap beside the Word Spotlight, so it never covers text. */
+#page-home .poster-block::after {
+  content: "\2192";
   position: absolute;
-  right: 22px;
-  bottom: -26px;
-  width: 64px;
-  height: 52px;
+  right: -14px;
+  bottom: -18px;
+  width: 46px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: var(--bold-orange);
   border: 3px solid var(--bold-line);
   box-shadow: 5px 5px 0 var(--bold-line);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--bold-line);
   pointer-events: none;
-  z-index: 1;
+  z-index: 2;
 }
-.site-footer::before { z-index: 1; }
-
 @media (max-width: 599px) {
-  .tip-card::after { width: 34px; height: 34px; top: -10px; right: -8px; }
-  .site-footer::after { width: 48px; height: 40px; right: 14px; }
+  #page-home .poster-block::after { right: -8px; bottom: -14px; width: 40px; height: 36px; font-size: 19px; }
 }
